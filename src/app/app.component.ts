@@ -6,7 +6,7 @@ import { MainMenu } from './main-menu.component';
   template: `
     <h1 class="text-center">Hello {{name}}</h1>
     <main-menu></main-menu>
-    <router-outlet><router-outlet>
+    <router-outlet class="col-xs-12 col-sm-10"><router-outlet>
     `,
 })
 export class AppComponent  { name = 'AppWin'; }
