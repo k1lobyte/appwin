@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var search_component_1 = require("./search.component");
+var login_component_1 = require("./login.component");
 var routes = [
     { path: 'search', component: search_component_1.SearchComponent },
+    { path: 'login', component: login_component_1.LoginComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }  from './app.component';
 import { MainMenu } from './main-menu.component';
 import { SearchComponent } from './search.component';
+import { LoginComponent }   from './login.component';
 
 @NgModule({
   imports:      [
@@ -16,6 +17,7 @@ import { SearchComponent } from './search.component';
     AppComponent,
     MainMenu,
     SearchComponent,
+    LoginComponent,
   ],
   bootstrap:    [ AppComponent ]
 })

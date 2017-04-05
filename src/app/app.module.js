@@ -11,6 +11,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var main_menu_component_1 = require("./main-menu.component");
 var search_component_1 = require("./search.component");
+var login_component_1 = require("./login.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,6 +27,7 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             main_menu_component_1.MainMenu,
             search_component_1.SearchComponent,
+            login_component_1.LoginComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })
