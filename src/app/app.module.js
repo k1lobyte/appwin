@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var main_menu_component_1 = require("./main-menu.component");
 var search_component_1 = require("./search.component");
 var login_component_1 = require("./login.component");
+var business_detail_component_1 = require("./business-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,6 +29,7 @@ AppModule = __decorate([
             main_menu_component_1.MainMenu,
             search_component_1.SearchComponent,
             login_component_1.LoginComponent,
+            business_detail_component_1.BusinessDetailComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
