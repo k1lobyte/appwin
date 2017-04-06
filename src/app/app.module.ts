@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import { MainMenu } from './main-menu.component';
 import { SearchComponent } from './search.component';
 import { LoginComponent }   from './login.component';
+import { BusinessDetailComponent} from './business-detail.component';
 
 @NgModule({
   imports:      [
@@ -18,7 +19,9 @@ import { LoginComponent }   from './login.component';
     MainMenu,
     SearchComponent,
     LoginComponent,
+    BusinessDetailComponent
   ],
   bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }
