@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { BUSINESSES } from './mock-businesses';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Business }     from './business';
+import { BusinessService} from './business.service';
 
 @Component({
     selector: 'search',
@@ -11,6 +14,24 @@ import { BUSINESSES } from './mock-businesses';
     `]
 })
 
-export class SearchComponent {
-    businesses = BUSINESSES;
+export class SearchComponent implements OnInit {
+    businesses: Business[];
+    selectedBusiness: Business;
+
+    constructor(
+      private router: Router,
+      private businessService: BusinessService) { }
+
+    ngOnInit(): void {
+     this.getBusinesses();
+    }
+
+    getBusinesses(): void {
+      this.businessService.getBusinesses().then(businesses => this.businesses = businesses);
+    }
+
+    onSelect(business: Business): void {
+      this.selectedBusiness = business;
+      this.router.navigate(['/business', this.selectedBusiness.code]);
+    }
 }
