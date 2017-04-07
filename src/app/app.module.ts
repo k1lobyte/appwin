@@ -4,14 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from './app.component';
-import { MainMenu } from './main-menu.component';
-import { SearchComponent } from './search.component';
-import { LoginComponent }   from './login.component';
-import { BusinessDetailComponent} from './business-detail.component';
-import { BusinessService }  from './business.service'
+import { MainMenu } from './menu/main-menu.component';
+import { SearchComponent } from './search/search.component';
+import { LoginComponent }   from './login/login.component';
+import { BusinessDetailComponent } from './business/business-detail.component';
+import { BusinessService }  from './business/business.service';
 
-import { ServicesService }  from './services.service'
-import { ScheduleAppointmentComponent }  from './schedule-appointment.component';
+import { LoginGuard } from './guard/login.guard';
+
+
+import { ServicesService }  from './service/services.service'
+import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.component';
 
 
 @NgModule({
@@ -28,7 +31,7 @@ import { ScheduleAppointmentComponent }  from './schedule-appointment.component'
     ScheduleAppointmentComponent
   ],
 
-  providers: [ BusinessService, ServicesService ],
+  providers: [ BusinessService, ServicesService, LoginGuard ],
 
   bootstrap:    [ AppComponent ]
 })

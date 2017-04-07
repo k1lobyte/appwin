@@ -9,16 +9,14 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
-var main_menu_component_1 = require("./main-menu.component");
-var search_component_1 = require("./search.component");
-var login_component_1 = require("./login.component");
-var business_detail_component_1 = require("./business-detail.component");
-var business_service_1 = require("./business.service");
-
-var services_service_1 = require("./services.service");
-var schedule_appointment_component_1 = require("./schedule-appointment.component");
-
-
+var main_menu_component_1 = require("./menu/main-menu.component");
+var search_component_1 = require("./search/search.component");
+var login_component_1 = require("./login/login.component");
+var business_detail_component_1 = require("./business/business-detail.component");
+var business_service_1 = require("./business/business.service");
+var login_guard_1 = require("./guard/login.guard");
+var services_service_1 = require("./service/services.service");
+var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,9 +36,7 @@ AppModule = __decorate([
             business_detail_component_1.BusinessDetailComponent,
             schedule_appointment_component_1.ScheduleAppointmentComponent
         ],
-
-        providers: [business_service_1.BusinessService, services_service_1.ServicesService],
-
+        providers: [business_service_1.BusinessService, services_service_1.ServicesService, login_guard_1.LoginGuard],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

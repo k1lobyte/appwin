@@ -1,11 +1,12 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SearchComponent } from './search.component';
-import { LoginComponent }   from './login.component';
-import { BusinessDetailComponent }   from './business-detail.component';
+import { SearchComponent } from './search/search.component';
+import { LoginComponent }   from './login/login.component';
+import { BusinessDetailComponent }   from './business/business-detail.component';
+import { LoginGuard }       from './guard/login.guard';
 
-import { ScheduleAppointmentComponent }   from './schedule-appointment.component';
+import { ScheduleAppointmentComponent }   from './schedule/schedule-appointment.component';
 
 
 
@@ -15,7 +16,9 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'business/:code', component: BusinessDetailComponent },
 
-    { path: 'schedule-appointment/:businessid/:serviceid', component: ScheduleAppointmentComponent },
+    { path: 'schedule-appointment/:businessid/:serviceid',
+            component: ScheduleAppointmentComponent,
+            canActivate: [LoginGuard]},
 
 ];
 
