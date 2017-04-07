@@ -8,6 +8,7 @@ import { MainMenu } from './main-menu.component';
 import { SearchComponent } from './search.component';
 import { LoginComponent }   from './login.component';
 import { BusinessDetailComponent} from './business-detail.component';
+import { BusinessService }  from './business.service'
 
 @NgModule({
   imports:      [
@@ -21,6 +22,7 @@ import { BusinessDetailComponent} from './business-detail.component';
     LoginComponent,
     BusinessDetailComponent
   ],
+  providers: [ BusinessService ],
   bootstrap:    [ AppComponent ]
 })
 

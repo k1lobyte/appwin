@@ -5,12 +5,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
-var mock_businesses_1 = require("./mock-businesses");
+var router_1 = require("@angular/router");
+var business_service_1 = require("./business.service");
 var SearchComponent = (function () {
-    function SearchComponent() {
-        this.businesses = mock_businesses_1.BUSINESSES;
+    function SearchComponent(router, businessService) {
+        this.router = router;
+        this.businessService = businessService;
     }
+    SearchComponent.prototype.ngOnInit = function () {
+        this.getBusinesses();
+    };
+    SearchComponent.prototype.getBusinesses = function () {
+        var _this = this;
+        this.businessService.getBusinesses().then(function (businesses) { return _this.businesses = businesses; });
+    };
+    SearchComponent.prototype.onSelect = function (business) {
+        this.selectedBusiness = business;
+        this.router.navigate(['/business', this.selectedBusiness.code]);
+    };
     return SearchComponent;
 }());
 SearchComponent = __decorate([
@@ -18,7 +34,9 @@ SearchComponent = __decorate([
         selector: 'search',
         templateUrl: './search.component.html',
         styles: ["\n        .panel {\n            margin: 5px;\n        }\n    "]
-    })
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        business_service_1.BusinessService])
 ], SearchComponent);
 exports.SearchComponent = SearchComponent;
 //# sourceMappingURL=search.component.js.map
