@@ -3,4 +3,6 @@ export class Business {
     name: string;
     code: string;
     address: string;
+    about: string;
+    phone: string;
 }

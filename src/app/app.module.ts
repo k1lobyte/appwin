@@ -10,6 +10,10 @@ import { LoginComponent }   from './login.component';
 import { BusinessDetailComponent} from './business-detail.component';
 import { BusinessService }  from './business.service'
 
+import { ServicesService }  from './services.service'
+import { ScheduleAppointmentComponent }  from './schedule-appointment.component';
+
+
 @NgModule({
   imports:      [
     BrowserModule,
@@ -20,9 +24,12 @@ import { BusinessService }  from './business.service'
     MainMenu,
     SearchComponent,
     LoginComponent,
-    BusinessDetailComponent
+    BusinessDetailComponent,
+    ScheduleAppointmentComponent
   ],
-  providers: [ BusinessService ],
+
+  providers: [ BusinessService, ServicesService ],
+
   bootstrap:    [ AppComponent ]
 })
 

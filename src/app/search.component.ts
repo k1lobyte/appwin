@@ -33,5 +33,9 @@ export class SearchComponent implements OnInit {
     onSelect(business: Business): void {
       this.selectedBusiness = business;
       this.router.navigate(['/business', this.selectedBusiness.code]);
-  }
+
+    }
+
+  
+
 }

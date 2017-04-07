@@ -5,18 +5,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'AppWin';
+var ScheduleAppointmentComponent = (function () {
+    function ScheduleAppointmentComponent() {
     }
-    return AppComponent;
+    return ScheduleAppointmentComponent;
 }());
-AppComponent = __decorate([
+ScheduleAppointmentComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n      <div class=\"container-fluid\"><h1>{{name}}</h1></div>\n      <main-menu></main-menu>\n      <router-outlet class=\"col-xs-12 col-sm-10\"><router-outlet>\n    ",
+        selector: 'schedule-appointment',
+        templateUrl: './schedule-appointment.component.html',
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ScheduleAppointmentComponent);
+exports.ScheduleAppointmentComponent = ScheduleAppointmentComponent;
+//# sourceMappingURL=schedule-appointment.component.js.map
