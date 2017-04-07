@@ -3,6 +3,7 @@ import { Business } from './business';
 export var BUSINESSES: Business[] = [
     {
         id: 1,
+
         name: "Tony's Barber Shop",
         code: 'tonys',
         address: '1234 Barber Bay Orlando, FL 32789',
@@ -23,6 +24,23 @@ export var BUSINESSES: Business[] = [
         code: "bobbyhair",
         address: '1234 Hair St. Orlando, FL 32789',
         about: 'We are a hair place located in the heart of the city. Come and check us out. First-time customers receive 10% off one service!',
-        phone: '(321) 385-1025'
+        phone: '(321) 385-1025',
+
+        name: 'Please work',
+        code: 'porfavor',
+        address: '1234 testing street',
+    },
+    {
+        id: 2,
+        name: 'other place',
+        code: 'other-place',
+        address: 'other address',
+    },
+    {
+        id: 3,
+        name: "Booby's hair place",
+        code: "boobhair",
+        address: "1777 7th street"
+
     }
 ];

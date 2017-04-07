@@ -12,6 +12,7 @@ require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
+
 var router_2 = require("@angular/router");
 var business_service_1 = require("./business.service");
 var services_service_1 = require("./services.service");
@@ -20,13 +21,13 @@ var BusinessDetailComponent = (function () {
         this.businessService = businessService;
         this.servicesService = servicesService;
         this.router = router;
-        this.route = route;
-        this.location = location;
-    }
+
+
     BusinessDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.businessService.getBusinessByCode(params['code']); })
+
             .subscribe(function (business) { return _this.getService(business); });
     };
     BusinessDetailComponent.prototype.getService = function (business) {
@@ -36,18 +37,30 @@ var BusinessDetailComponent = (function () {
     };
     BusinessDetailComponent.prototype.onSelect = function (service) {
         this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
+
+            .subscribe(function (business) { return _this.business = business; });
+    };
+    BusinessDetailComponent.prototype.goBack = function () {
+        this.location.back();
+
     };
     return BusinessDetailComponent;
 }());
 BusinessDetailComponent = __decorate([
     core_1.Component({
         selector: 'business-detail',
+
         templateUrl: './business-detail.component.html',
         styles: ["\n    .list-group-item {\n      display:flex;\n      justify-content:space-between;\n      align-items:center;\n    }"]
     }),
     __metadata("design:paramtypes", [business_service_1.BusinessService,
         services_service_1.ServicesService,
         router_2.Router,
+
+        templateUrl: './business-detail.component.html'
+    }),
+    __metadata("design:paramtypes", [business_service_1.BusinessService,
+
         router_1.ActivatedRoute,
         common_1.Location])
 ], BusinessDetailComponent);

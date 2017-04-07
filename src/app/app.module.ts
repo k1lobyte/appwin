@@ -9,8 +9,10 @@ import { SearchComponent } from './search.component';
 import { LoginComponent }   from './login.component';
 import { BusinessDetailComponent} from './business-detail.component';
 import { BusinessService }  from './business.service'
+
 import { ServicesService }  from './services.service'
 import { ScheduleAppointmentComponent }  from './schedule-appointment.component';
+
 
 @NgModule({
   imports:      [
@@ -25,7 +27,9 @@ import { ScheduleAppointmentComponent }  from './schedule-appointment.component'
     BusinessDetailComponent,
     ScheduleAppointmentComponent
   ],
+
   providers: [ BusinessService, ServicesService ],
+
   bootstrap:    [ AppComponent ]
 })
 
