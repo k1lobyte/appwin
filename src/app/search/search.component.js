@@ -24,8 +24,7 @@ var SearchComponent = (function () {
         this.businessService.getBusinesses().then(function (businesses) { return _this.businesses = businesses; });
     };
     SearchComponent.prototype.onSelect = function (business) {
-        this.selectedBusiness = business;
-        this.router.navigate(['/business', this.selectedBusiness.code]);
+        this.router.navigate(['/business', business.id]);
     };
     return SearchComponent;
 }());

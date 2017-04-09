@@ -9,12 +9,10 @@ import { SearchComponent } from './search/search.component';
 import { LoginComponent }   from './login/login.component';
 import { BusinessDetailComponent } from './business/business-detail.component';
 import { BusinessService }  from './business/business.service';
-
 import { LoginGuard } from './guard/login.guard';
-
-
 import { ServicesService }  from './service/services.service'
 import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.component';
+import { FeedbackService }  from './feedback/feedback.service';
 
 
 @NgModule({
@@ -31,7 +29,7 @@ import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.c
     ScheduleAppointmentComponent
   ],
 
-  providers: [ BusinessService, ServicesService, LoginGuard ],
+  providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService ],
 
   bootstrap:    [ AppComponent ]
 })

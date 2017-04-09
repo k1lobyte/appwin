@@ -10,12 +10,10 @@ export class ServicesService {
   }
 
   getService(id: number): Promise<Service> {
-    return this.getServices()
-               .then(services => services.find(service => service.id === id));
+    return this.getServices().then(services => services.find(service => service.id === id));
   }
 
-  getServicesByBusinessId(businessId: number): Promise<Service[]> {
-    return this.getServices()
-               .then(services => services.filter(service => service.businessId === businessId));
+  getServicesByBusinessId(id: number): Promise<Service[]> {
+    return this.getServices().then(services => services.filter(service => service.company_id === id));
   }
 }

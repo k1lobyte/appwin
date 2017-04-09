@@ -14,12 +14,10 @@ var ServicesService = (function () {
         return Promise.resolve(mock_services_1.SERVICES);
     };
     ServicesService.prototype.getService = function (id) {
-        return this.getServices()
-            .then(function (services) { return services.find(function (service) { return service.id === id; }); });
+        return this.getServices().then(function (services) { return services.find(function (service) { return service.id === id; }); });
     };
-    ServicesService.prototype.getServicesByBusinessId = function (businessId) {
-        return this.getServices()
-            .then(function (services) { return services.filter(function (service) { return service.businessId === businessId; }); });
+    ServicesService.prototype.getServicesByBusinessId = function (id) {
+        return this.getServices().then(function (services) { return services.filter(function (service) { return service.company_id === id; }); });
     };
     return ServicesService;
 }());

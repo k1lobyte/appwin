@@ -14,8 +14,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'business/:code', component: BusinessDetailComponent },
-
+    { path: 'business/:id', component: BusinessDetailComponent },
     { path: 'schedule-appointment/:businessid/:serviceid',
             component: ScheduleAppointmentComponent,
             canActivate: [LoginGuard]},
