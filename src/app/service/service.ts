@@ -1,6 +1,7 @@
 export class Service {
   id: number;
-  businessId: number;
+  company_id: number;
   name: string;
-  duration: string;
+  description: string;
+  estDuration: number;
 }

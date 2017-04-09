@@ -16,7 +16,7 @@ var routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: search_component_1.SearchComponent },
     { path: 'login', component: login_component_1.LoginComponent },
-    { path: 'business/:code', component: business_detail_component_1.BusinessDetailComponent },
+    { path: 'business/:id', component: business_detail_component_1.BusinessDetailComponent },
     { path: 'schedule-appointment/:businessid/:serviceid',
         component: schedule_appointment_component_1.ScheduleAppointmentComponent,
         canActivate: [login_guard_1.LoginGuard] },

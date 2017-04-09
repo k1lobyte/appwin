@@ -15,10 +15,12 @@ var common_1 = require("@angular/common");
 var router_2 = require("@angular/router");
 var business_service_1 = require("./business.service");
 var services_service_1 = require("./../service/services.service");
+var feedback_service_1 = require("./../feedback/feedback.service");
 var BusinessDetailComponent = (function () {
-    function BusinessDetailComponent(businessService, servicesService, router, route, location) {
+    function BusinessDetailComponent(businessService, servicesService, feedbackService, router, route, location) {
         this.businessService = businessService;
         this.servicesService = servicesService;
+        this.feedbackService = feedbackService;
         this.router = router;
         this.route = route;
         this.location = location;
@@ -26,13 +28,14 @@ var BusinessDetailComponent = (function () {
     BusinessDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.businessService.getBusinessByCode(params['code']); })
-            .subscribe(function (business) { return _this.getService(business); });
+            .switchMap(function (params) { return _this.businessService.getBusiness(+params['id']); })
+            .subscribe(function (business) { return _this.getBusinessData(business); });
     };
-    BusinessDetailComponent.prototype.getService = function (business) {
+    BusinessDetailComponent.prototype.getBusinessData = function (business) {
         var _this = this;
         this.business = business;
         this.servicesService.getServicesByBusinessId(this.business.id).then(function (services) { return _this.services = services; });
+        this.feedbackService.getFeedbackByBusinessId(this.business.id).then(function (feedback) { return _this.feedback = feedback; });
     };
     BusinessDetailComponent.prototype.onSelect = function (service) {
         this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
@@ -45,11 +48,11 @@ var BusinessDetailComponent = (function () {
 BusinessDetailComponent = __decorate([
     core_1.Component({
         selector: 'business-detail',
-        templateUrl: './business-detail.component.html',
-        styles: ["\n    .list-group-item {\n      display:flex;\n      justify-content:space-between;\n      align-items:center;\n    }"]
+        templateUrl: './business-detail.component.html'
     }),
     __metadata("design:paramtypes", [business_service_1.BusinessService,
         services_service_1.ServicesService,
+        feedback_service_1.FeedbackService,
         router_2.Router,
         router_1.ActivatedRoute,
         common_1.Location])

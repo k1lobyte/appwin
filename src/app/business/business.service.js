@@ -14,12 +14,7 @@ var BusinessService = (function () {
         return Promise.resolve(mock_businesses_1.BUSINESSES);
     };
     BusinessService.prototype.getBusiness = function (id) {
-        return this.getBusinesses()
-            .then(function (businesses) { return businesses.find(function (business) { return business.id === id; }); });
-    };
-    BusinessService.prototype.getBusinessByCode = function (code) {
-        return this.getBusinesses()
-            .then(function (businesses) { return businesses.find(function (business) { return business.code === code; }); });
+        return this.getBusinesses().then(function (businesses) { return businesses.find(function (business) { return business.id === id; }); });
     };
     return BusinessService;
 }());
