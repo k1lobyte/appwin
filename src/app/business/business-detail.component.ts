@@ -2,9 +2,7 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
-
 import { Router } from '@angular/router';
-
 import { Business }     from './business';
 import { BusinessService }   from './business.service';
 import { Service }     from './../service/service';
@@ -29,16 +27,15 @@ export class BusinessDetailComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-
   ) {}
 
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.businessService.getBusiness(+params['id']))
-      .subscribe(business => this.getBusinessData(business));
+      .subscribe(business => this.initialize(business));
   }
 
-  getBusinessData(business: Business): void {
+  initialize(business: Business): void {
     this.business = business;
     this.servicesService.getServicesByBusinessId(this.business.id).then(services => this.services = services);
     this.feedbackService.getFeedbackByBusinessId(this.business.id).then(feedback => this.feedback = feedback);

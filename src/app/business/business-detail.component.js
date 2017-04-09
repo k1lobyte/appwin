@@ -29,9 +29,9 @@ var BusinessDetailComponent = (function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.businessService.getBusiness(+params['id']); })
-            .subscribe(function (business) { return _this.getBusinessData(business); });
+            .subscribe(function (business) { return _this.initialize(business); });
     };
-    BusinessDetailComponent.prototype.getBusinessData = function (business) {
+    BusinessDetailComponent.prototype.initialize = function (business) {
         var _this = this;
         this.business = business;
         this.servicesService.getServicesByBusinessId(this.business.id).then(function (services) { return _this.services = services; });
