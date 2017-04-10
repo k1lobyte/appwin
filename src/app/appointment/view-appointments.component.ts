@@ -23,8 +23,9 @@ export class ViewAppointmentsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Hard coded business id.. Need logged business id for admin user!!!
     this.route.params
-      .switchMap((params: Params) => this.appointmentService.getAppointmentsByBusinessId(+params['id']))
+      .switchMap((params: Params) => this.appointmentService.getAppointmentsByBusinessId(75))
       .subscribe(appointments => this.appointments = appointments);
   }
 }

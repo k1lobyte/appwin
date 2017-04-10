@@ -1,0 +1,31 @@
+<div *ngIf="appointment && service && business">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>
+        <span>{{service.name}} </span>
+        <span class="label pull-right"
+              [class.label-default]="appointment.status === 'Confirmed'"
+              [class.label-success]="appointment.status === 'Completed'"
+              [class.label-warning]="appointment.status === 'Pending'"
+              [class.label-danger]="appointment.status === 'Canceled'">{{appointment.status}}</span>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <!-- Appointment Details -->
+      <h5>Appointment Details</h5>
+      <div *ngIf="appointment.status !== 'Completed'">Begins at [insert time]</div>
+      <div *ngIf="appointment.status === 'Completed'">Completed at {{appointment.endTime}}</div>
+      <div>Service by [insert employee name]</div>
+      <!-- Customer Details -->
+      <h5>Customer Information</h5>
+      <div>{{appointment.customerContact.fName}} {{appointment.customerContact.lName}}</div>
+      <div>{{appointment.customerContact.email}}</div>
+      <div>{{appointment.customerContact.phone}}</div>
+      <div class="pull-right">
+        <button class="btn btn-danger" *ngIf="appointment.status === 'Pending'" (click)="reject(appointment)">Reject</button>
+        <button class="btn btn-default" *ngIf="appointment.status === 'Pending'" (click)="confirm(appointment)">Confirm</button>
+        <button class="btn btn-primary" *ngIf="appointment.status === 'Confirmed'" (click)="complete(appointment)">Mark Complete</button>
+      </div>
+    </div>
+  </div>
+</div>
