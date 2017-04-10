@@ -1,5 +1,8 @@
 <div class="container-fluid" *ngIf="service && business">
-  <h3>Schedule Appointment for {{service.name}} <span class="label label-info pull-right">{{business.name}}</span></h3>
+  <div class="well">
+    <h3>{{business.name}}</h3>
+    <h4>Schedule Appointment for {{service.name}}</h4>
+  </div>
   <form class="col-sm-4">
     <div class="form-group">
       <div class="form-group">
