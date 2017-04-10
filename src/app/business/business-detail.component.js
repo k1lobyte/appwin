@@ -40,9 +40,6 @@ var BusinessDetailComponent = (function () {
     BusinessDetailComponent.prototype.onSelect = function (service) {
         this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
     };
-    BusinessDetailComponent.prototype.goBack = function () {
-        this.location.back();
-    };
     return BusinessDetailComponent;
 }());
 BusinessDetailComponent = __decorate([

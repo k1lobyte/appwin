@@ -43,11 +43,5 @@ export class BusinessDetailComponent implements OnInit {
 
   onSelect(service: Service): void {
     this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
-
-  }
-
-  goBack(): void {
-    this.location.back();
-
   }
 }
