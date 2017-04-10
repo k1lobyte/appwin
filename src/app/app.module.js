@@ -17,6 +17,9 @@ var business_service_1 = require("./business/business.service");
 var login_guard_1 = require("./guard/login.guard");
 var services_service_1 = require("./service/services.service");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
+var feedback_service_1 = require("./feedback/feedback.service");
+var appointment_service_1 = require("./appointment/appointment.service");
+var view_appointments_component_1 = require("./appointment/view-appointments.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,9 +37,10 @@ AppModule = __decorate([
             search_component_1.SearchComponent,
             login_component_1.LoginComponent,
             business_detail_component_1.BusinessDetailComponent,
-            schedule_appointment_component_1.ScheduleAppointmentComponent
+            schedule_appointment_component_1.ScheduleAppointmentComponent,
+            view_appointments_component_1.ViewAppointmentsComponent
         ],
-        providers: [business_service_1.BusinessService, services_service_1.ServicesService, login_guard_1.LoginGuard],
+        providers: [login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService, appointment_service_1.AppointmentService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -2,8 +2,8 @@
 <div class="container-fluid" *ngIf="business">
   <div class="jumbotron">
     <h2>{{business.name}}</h2>
-    <p>{{business.address}} | {{business.phone}}</p>
-    <p>{{business.about}}</p>
+    <p>{{business.address.street}} {{business.address.city}}, {{business.address.state}} {{business.address.zip}} | {{business.phone}}</p>
+    <p>{{business.description}}</p>
   </div>
   <!-- Business Services -->
   <div class="panel panel-default">
@@ -11,8 +11,8 @@
     <div class="panel-body">
         <div class="list-group">
             <div class="list-group-item" *ngFor="let service of services" (click)="onSelect(service)">
-              <span>{{service.name}} | {{service.duration}}</span>
-              <button type="button" class="btn btn-default btn-sm pull-right">Schedule Appointment</button>
+              <span>{{service.name}} | {{service.estDuration}} minutes</span>
+              <button type="button" class="btn btn-default btn-xs pull-right">Schedule Appointment</button>
             </div>
         </div>
     </div>
@@ -21,8 +21,12 @@
   <div class="panel panel-default">
     <div class="panel-heading"><h4>Recent Feedback</h4></div>
     <div class="panel-body">
-
+      <div class="list-group">
+          <div class="list-group-item" *ngFor="let f of feedback">
+            <h4 class="list-group-item-heading">[customer name] <span class="pull-right">{{f.rating}} out of 5</span></h4>
+            <p>{{f.comment}}</p>
+          </div>
+      </div>
     </div>
   </div>
-
 </div>

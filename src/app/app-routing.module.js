@@ -12,13 +12,17 @@ var login_component_1 = require("./login/login.component");
 var business_detail_component_1 = require("./business/business-detail.component");
 var login_guard_1 = require("./guard/login.guard");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
+var view_appointments_component_1 = require("./appointment/view-appointments.component");
 var routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: search_component_1.SearchComponent },
     { path: 'login', component: login_component_1.LoginComponent },
-    { path: 'business/:code', component: business_detail_component_1.BusinessDetailComponent },
+    { path: 'business/:id', component: business_detail_component_1.BusinessDetailComponent },
     { path: 'schedule-appointment/:businessid/:serviceid',
         component: schedule_appointment_component_1.ScheduleAppointmentComponent,
+        canActivate: [login_guard_1.LoginGuard] },
+    { path: 'view-appointments/:businessid',
+        component: view_appointments_component_1.ViewAppointmentsComponent,
         canActivate: [login_guard_1.LoginGuard] },
 ];
 var AppRoutingModule = (function () {

@@ -11,12 +11,12 @@ export class LoginGuard implements CanActivate {
         //if(LocalStorage.getItem('currentUser')) {
         //    return true;
         //}
-
+        return true;
         // if(false) {
         //     return true;
         // }
 
-        this.router.navigate(['/login']);
-        return false;
+      //  this.router.navigate(['/login']);
+        //return false;
     }
 }

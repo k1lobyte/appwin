@@ -9,13 +9,12 @@ import { SearchComponent } from './search/search.component';
 import { LoginComponent }   from './login/login.component';
 import { BusinessDetailComponent } from './business/business-detail.component';
 import { BusinessService }  from './business/business.service';
-
 import { LoginGuard } from './guard/login.guard';
-
-
 import { ServicesService }  from './service/services.service'
 import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.component';
-
+import { FeedbackService }  from './feedback/feedback.service';
+import { AppointmentService }  from './appointment/appointment.service';
+import { ViewAppointmentsComponent }  from './appointment/view-appointments.component';
 
 @NgModule({
   imports:      [
@@ -28,10 +27,11 @@ import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.c
     SearchComponent,
     LoginComponent,
     BusinessDetailComponent,
-    ScheduleAppointmentComponent
+    ScheduleAppointmentComponent,
+    ViewAppointmentsComponent
   ],
 
-  providers: [ BusinessService, ServicesService, LoginGuard ],
+  providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService, AppointmentService ],
 
   bootstrap:    [ AppComponent ]
 })

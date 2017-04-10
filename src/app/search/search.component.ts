@@ -16,7 +16,6 @@ import { BusinessService} from './../business/business.service';
 
 export class SearchComponent implements OnInit {
     businesses: Business[];
-    selectedBusiness: Business;
 
     constructor(
       private router: Router,
@@ -31,11 +30,6 @@ export class SearchComponent implements OnInit {
     }
 
     onSelect(business: Business): void {
-      this.selectedBusiness = business;
-      this.router.navigate(['/business', this.selectedBusiness.code]);
-
+      this.router.navigate(['/business', business.id]);
     }
-
-
-
 }

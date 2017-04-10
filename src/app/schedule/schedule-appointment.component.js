@@ -5,18 +5,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-require("rxjs/add/operator/switchMap");
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var router_2 = require("@angular/router");
+var business_service_1 = require("./../business/business.service");
+var services_service_1 = require("./../service/services.service");
 var ScheduleAppointmentComponent = (function () {
-    function ScheduleAppointmentComponent() {
+    function ScheduleAppointmentComponent(businessService, servicesService, router, route, location) {
+        this.businessService = businessService;
+        this.servicesService = servicesService;
+        this.router = router;
+        this.route = route;
+        this.location = location;
     }
+    ScheduleAppointmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.servicesService.getService(+params['serviceid']); })
+            .subscribe(function (service) { return _this.initialize(service); });
+    };
+    ScheduleAppointmentComponent.prototype.initialize = function (service) {
+        var _this = this;
+        this.service = service;
+        this.businessService.getBusiness(this.service.company_id).then(function (business) { return _this.business = business; });
+    };
+    ScheduleAppointmentComponent.prototype.schedule = function () {
+    };
+    ScheduleAppointmentComponent.prototype.cancel = function () {
+        this.router.navigate(['/business', this.business.id]);
+    };
     return ScheduleAppointmentComponent;
 }());
 ScheduleAppointmentComponent = __decorate([
     core_1.Component({
         selector: 'schedule-appointment',
-        templateUrl: './schedule-appointment.component.html',
-    })
+        templateUrl: './schedule-appointment.component.html'
+    }),
+    __metadata("design:paramtypes", [business_service_1.BusinessService,
+        services_service_1.ServicesService,
+        router_2.Router,
+        router_1.ActivatedRoute,
+        common_1.Location])
 ], ScheduleAppointmentComponent);
 exports.ScheduleAppointmentComponent = ScheduleAppointmentComponent;
 //# sourceMappingURL=schedule-appointment.component.js.map
