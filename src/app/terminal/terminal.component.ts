@@ -24,4 +24,8 @@ export class TerminalComponent implements OnInit {
     getQueue(): void {
         this.terminalService.getQueue().then(queue => this.fullQueue = queue);
     }
+
+    toEntry(): void {
+        this.router.navigate(['terminal/add-entry']);
+    }
 }
