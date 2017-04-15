@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span>Queue
+            <button (click)="toEntry()" class="btn btn-primary pull-right">Add Entry</button>
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default" *ngFor="let entry of fullQueue">
+                    <div class="panel-body">
+                        <h4>{{entry.name}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
