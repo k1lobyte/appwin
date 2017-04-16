@@ -23,7 +23,7 @@ var routes = [
     { path: 'schedule-appointment/:businessid/:serviceid',
         component: schedule_appointment_component_1.ScheduleAppointmentComponent,
         canActivate: [login_guard_1.LoginGuard] },
-    { path: 'view-appointments/:businessid',
+    { path: 'view-appointments',
         component: view_appointments_component_1.ViewAppointmentsComponent,
         canActivate: [login_guard_1.LoginGuard] },
     { path: 'terminal', component: terminal_component_1.TerminalComponent, canActivate: [login_guard_1.LoginGuard] },

@@ -20,6 +20,7 @@ var schedule_appointment_component_1 = require("./schedule/schedule-appointment.
 var feedback_service_1 = require("./feedback/feedback.service");
 var appointment_service_1 = require("./appointment/appointment.service");
 var view_appointments_component_1 = require("./appointment/view-appointments.component");
+var appointment_detail_component_1 = require("./appointment/appointment-detail.component");
 var terminal_component_1 = require("./terminal/terminal.component");
 var terminal_service_1 = require("./terminal/terminal.service");
 var add_entry_component_1 = require("./terminal/addentry/add-entry.component");
@@ -42,6 +43,7 @@ AppModule = __decorate([
             business_detail_component_1.BusinessDetailComponent,
             schedule_appointment_component_1.ScheduleAppointmentComponent,
             view_appointments_component_1.ViewAppointmentsComponent,
+            appointment_detail_component_1.AppointmentDetailComponent,
             terminal_component_1.TerminalComponent,
             add_entry_component_1.AddEntryComponent,
         ],

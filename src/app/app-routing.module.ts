@@ -19,7 +19,7 @@ const routes: Routes = [
     { path: 'schedule-appointment/:businessid/:serviceid',
             component: ScheduleAppointmentComponent,
             canActivate: [LoginGuard]},
-    { path: 'view-appointments/:businessid',
+    { path: 'view-appointments',
             component: ViewAppointmentsComponent,
             canActivate: [LoginGuard]},
     { path: 'terminal', component: TerminalComponent, canActivate: [LoginGuard]},
