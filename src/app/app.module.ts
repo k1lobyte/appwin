@@ -15,6 +15,7 @@ import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.c
 import { FeedbackService }  from './feedback/feedback.service';
 import { AppointmentService }  from './appointment/appointment.service';
 import { ViewAppointmentsComponent }  from './appointment/view-appointments.component';
+import { AppointmentDetailComponent }  from './appointment/appointment-detail.component';
 import { TerminalComponent }    from './terminal/terminal.component';
 import { TerminalService }      from './terminal/terminal.service';
 import { AddEntryComponent }    from './terminal/addentry/add-entry.component';
@@ -32,6 +33,7 @@ import { AddEntryComponent }    from './terminal/addentry/add-entry.component';
     BusinessDetailComponent,
     ScheduleAppointmentComponent,
     ViewAppointmentsComponent,
+    AppointmentDetailComponent,
     TerminalComponent,
     AddEntryComponent,
   ],
