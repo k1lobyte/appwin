@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import { MainMenu } from './menu/main-menu.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent }   from './login/login.component';
+import { UserService }  from './user.service'
 import { BusinessDetailComponent } from './business/business-detail.component';
 import { BusinessService }  from './business/business.service';
 import { LoginGuard } from './guard/login.guard';
@@ -19,6 +20,8 @@ import { AppointmentDetailComponent }  from './appointment/appointment-detail.co
 import { TerminalComponent }    from './terminal/terminal.component';
 import { TerminalService }      from './terminal/terminal.service';
 import { AddEntryComponent }    from './terminal/addentry/add-entry.component';
+import { ViewEmployeesComponent }   from './admin/view-employees.component';
+import { ViewCustomersComponent }   from './admin/view-customers.component';
 
 @NgModule({
   imports:      [
@@ -36,10 +39,12 @@ import { AddEntryComponent }    from './terminal/addentry/add-entry.component';
     AppointmentDetailComponent,
     TerminalComponent,
     AddEntryComponent,
+    ViewEmployeesComponent,
+    ViewCustomersComponent
   ],
 
   providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService,
-       AppointmentService, TerminalService ],
+       AppointmentService, TerminalService, UserService ],
 
   bootstrap:    [ AppComponent ]
 })

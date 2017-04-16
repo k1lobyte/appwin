@@ -11,6 +11,9 @@ import { AddEntryComponent }   from './terminal/addentry/add-entry.component';
 import { ScheduleAppointmentComponent }   from './schedule/schedule-appointment.component';
 import { ViewAppointmentsComponent }   from './appointment/view-appointments.component';
 
+import { ViewEmployeesComponent }   from './admin/view-employees.component';
+import { ViewCustomersComponent }   from './admin/view-customers.component';
+
 const routes: Routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: SearchComponent },
@@ -21,6 +24,12 @@ const routes: Routes = [
             canActivate: [LoginGuard]},
     { path: 'view-appointments',
             component: ViewAppointmentsComponent,
+            canActivate: [LoginGuard]},
+    { path: 'view-employees',
+            component: ViewEmployeesComponent,
+            canActivate: [LoginGuard]},
+    { path: 'view-customers',
+            component: ViewCustomersComponent,
             canActivate: [LoginGuard]},
     { path: 'terminal', component: TerminalComponent, canActivate: [LoginGuard]},
     { path: 'terminal/add-entry', component: AddEntryComponent, canActivate: [LoginGuard]},

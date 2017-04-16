@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var main_menu_component_1 = require("./menu/main-menu.component");
 var search_component_1 = require("./search/search.component");
 var login_component_1 = require("./login/login.component");
+var user_service_1 = require("./user.service");
 var business_detail_component_1 = require("./business/business-detail.component");
 var business_service_1 = require("./business/business.service");
 var login_guard_1 = require("./guard/login.guard");
@@ -24,6 +25,8 @@ var appointment_detail_component_1 = require("./appointment/appointment-detail.c
 var terminal_component_1 = require("./terminal/terminal.component");
 var terminal_service_1 = require("./terminal/terminal.service");
 var add_entry_component_1 = require("./terminal/addentry/add-entry.component");
+var view_employees_component_1 = require("./admin/view-employees.component");
+var view_customers_component_1 = require("./admin/view-customers.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,9 +49,11 @@ AppModule = __decorate([
             appointment_detail_component_1.AppointmentDetailComponent,
             terminal_component_1.TerminalComponent,
             add_entry_component_1.AddEntryComponent,
+            view_employees_component_1.ViewEmployeesComponent,
+            view_customers_component_1.ViewCustomersComponent
         ],
         providers: [login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
-            appointment_service_1.AppointmentService, terminal_service_1.TerminalService],
+            appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

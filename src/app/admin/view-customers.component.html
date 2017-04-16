@@ -1,0 +1,14 @@
+<div class="container-fluid" *ngIf="customers">
+   <div class="well">
+     <h3>Customers</h3>
+   </div>
+   <div *ngFor="let customer of customers">
+     <div class="panel panel-default">
+       <div class="panel-body">
+         <!-- Customer Details -->
+         <div>{{customer.name.fName}} {{customer.name.lName}}</div>
+         <div>{{customer.email}}</div>
+       </div>
+     </div>
+  </div>
+</div>
