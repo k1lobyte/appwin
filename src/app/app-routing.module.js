@@ -15,6 +15,8 @@ var terminal_component_1 = require("./terminal/terminal.component");
 var add_entry_component_1 = require("./terminal/addentry/add-entry.component");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
 var view_appointments_component_1 = require("./appointment/view-appointments.component");
+var view_employees_component_1 = require("./admin/view-employees.component");
+var view_customers_component_1 = require("./admin/view-customers.component");
 var routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: search_component_1.SearchComponent },
@@ -25,6 +27,12 @@ var routes = [
         canActivate: [login_guard_1.LoginGuard] },
     { path: 'view-appointments',
         component: view_appointments_component_1.ViewAppointmentsComponent,
+        canActivate: [login_guard_1.LoginGuard] },
+    { path: 'view-employees',
+        component: view_employees_component_1.ViewEmployeesComponent,
+        canActivate: [login_guard_1.LoginGuard] },
+    { path: 'view-customers',
+        component: view_customers_component_1.ViewCustomersComponent,
         canActivate: [login_guard_1.LoginGuard] },
     { path: 'terminal', component: terminal_component_1.TerminalComponent, canActivate: [login_guard_1.LoginGuard] },
     { path: 'terminal/add-entry', component: add_entry_component_1.AddEntryComponent, canActivate: [login_guard_1.LoginGuard] },
