@@ -22,6 +22,8 @@ import { TerminalService }      from './terminal/terminal.service';
 import { AddEntryComponent }    from './terminal/addentry/add-entry.component';
 import { ViewEmployeesComponent }   from './admin/view-employees.component';
 import { ViewCustomersComponent }   from './admin/view-customers.component';
+import { ViewQueueComponent } from './employee/viewqueue.component';
+import { EmployeeComponent }    from './employee/employee.component';
 
 @NgModule({
   imports:      [
@@ -40,7 +42,9 @@ import { ViewCustomersComponent }   from './admin/view-customers.component';
     TerminalComponent,
     AddEntryComponent,
     ViewEmployeesComponent,
-    ViewCustomersComponent
+    ViewCustomersComponent,
+    ViewQueueComponent,
+    EmployeeComponent,
   ],
 
   providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService,

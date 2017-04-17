@@ -4,4 +4,5 @@ export class QueueEntry {
     name: string;
     email: string;
     phone: string;
+    timeWaiting: number;
 }

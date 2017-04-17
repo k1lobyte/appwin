@@ -17,6 +17,8 @@ var schedule_appointment_component_1 = require("./schedule/schedule-appointment.
 var view_appointments_component_1 = require("./appointment/view-appointments.component");
 var view_employees_component_1 = require("./admin/view-employees.component");
 var view_customers_component_1 = require("./admin/view-customers.component");
+var viewqueue_component_1 = require("./employee/viewqueue.component");
+var employee_component_1 = require("./employee/employee.component");
 var routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: search_component_1.SearchComponent },
@@ -36,6 +38,8 @@ var routes = [
         canActivate: [login_guard_1.LoginGuard] },
     { path: 'terminal', component: terminal_component_1.TerminalComponent, canActivate: [login_guard_1.LoginGuard] },
     { path: 'terminal/add-entry', component: add_entry_component_1.AddEntryComponent, canActivate: [login_guard_1.LoginGuard] },
+    { path: 'employee', component: employee_component_1.EmployeeComponent, canActivate: [login_guard_1.LoginGuard] },
+    { path: 'employee/view-queue', component: viewqueue_component_1.ViewQueueComponent, canActivate: [login_guard_1.LoginGuard] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

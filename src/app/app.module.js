@@ -27,6 +27,8 @@ var terminal_service_1 = require("./terminal/terminal.service");
 var add_entry_component_1 = require("./terminal/addentry/add-entry.component");
 var view_employees_component_1 = require("./admin/view-employees.component");
 var view_customers_component_1 = require("./admin/view-customers.component");
+var viewqueue_component_1 = require("./employee/viewqueue.component");
+var employee_component_1 = require("./employee/employee.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -50,7 +52,9 @@ AppModule = __decorate([
             terminal_component_1.TerminalComponent,
             add_entry_component_1.AddEntryComponent,
             view_employees_component_1.ViewEmployeesComponent,
-            view_customers_component_1.ViewCustomersComponent
+            view_customers_component_1.ViewCustomersComponent,
+            viewqueue_component_1.ViewQueueComponent,
+            employee_component_1.EmployeeComponent,
         ],
         providers: [login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
             appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService],
