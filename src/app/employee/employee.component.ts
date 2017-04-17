@@ -11,13 +11,10 @@ export class EmployeeComponent implements OnInit {
     currentCustomer: QueueEntry;
 
     constructor(
-        private terminalService: TerminalService) {}
+        private terminalService: TerminalService
+      ) {}
 
     ngOnInit(): void {
-        this.getEntry();
-    }
-
-    getEntry(): void {
         this.terminalService.getEntry(1).then(entry => this.currentCustomer = entry);
     }
 }

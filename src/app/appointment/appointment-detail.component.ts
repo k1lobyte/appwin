@@ -27,7 +27,7 @@
      private businessService: BusinessService,
      private router: Router,
      private route: ActivatedRoute,
-    private location: Location,
+     private location: Location
    ) {}
 
    ngOnInit(): void {
