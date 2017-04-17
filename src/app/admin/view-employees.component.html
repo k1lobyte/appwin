@@ -1,0 +1,13 @@
+<div class="container-fluid" *ngIf="employees">
+   <div class="well">
+     <h3>Employees</h3>
+   </div>
+   <div *ngFor="let employee of employees">
+     <div class="panel panel-default">
+       <div class="panel-body">
+         <div>{{employee.name.fName}} {{employee.name.lName}}</div>
+         <div>{{employee.email}}</div>
+       </div>
+     </div>
+  </div>
+</div>
