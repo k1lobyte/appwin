@@ -14,6 +14,9 @@ import { ViewAppointmentsComponent }   from './appointment/view-appointments.com
 import { ViewEmployeesComponent }   from './admin/view-employees.component';
 import { ViewCustomersComponent }   from './admin/view-customers.component';
 
+import { ViewQueueComponent }   from './employee/viewqueue.component';
+import { EmployeeComponent }    from './employee/employee.component';
+
 const routes: Routes = [
     { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: SearchComponent },
@@ -33,6 +36,8 @@ const routes: Routes = [
             canActivate: [LoginGuard]},
     { path: 'terminal', component: TerminalComponent, canActivate: [LoginGuard]},
     { path: 'terminal/add-entry', component: AddEntryComponent, canActivate: [LoginGuard]},
+    { path: 'employee', component: EmployeeComponent, canActivate: [LoginGuard]},
+    { path: 'employee/view-queue', component: ViewQueueComponent, canActivate: [LoginGuard]},
 
 ];
 
