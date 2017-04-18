@@ -8,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var auth_service_1 = require("./auth.service");
 var main_menu_component_1 = require("./menu/main-menu.component");
 var search_component_1 = require("./search/search.component");
 var login_component_1 = require("./login/login.component");
@@ -20,7 +22,7 @@ var services_service_1 = require("./service/services.service");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
 var feedback_service_1 = require("./feedback/feedback.service");
 var appointment_service_1 = require("./appointment/appointment.service");
-var view_appointments_component_1 = require("./appointment/view-appointments.component");
+var view_appointments_component_1 = require("./admin/view-appointments.component");
 var appointment_detail_component_1 = require("./appointment/appointment-detail.component");
 var terminal_component_1 = require("./terminal/terminal.component");
 var terminal_service_1 = require("./terminal/terminal.service");
@@ -39,6 +41,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
+            forms_1.FormsModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -56,7 +59,7 @@ AppModule = __decorate([
             viewqueue_component_1.ViewQueueComponent,
             employee_component_1.EmployeeComponent,
         ],
-        providers: [login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
+        providers: [auth_service_1.AuthService, login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
             appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService],
         bootstrap: [app_component_1.AppComponent]
     })

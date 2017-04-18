@@ -1,13 +1,9 @@
-/* Component shows all appointments for the logged in user.
-    If Admin, will show all appointments for their business.
-    If Employee or Customer, will show their specific appointments.
-*/
-
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from './../auth.service';
 
 import { Appointment }     from './../appointment/appointment';
 import { AppointmentService }   from './../appointment/appointment.service';
@@ -25,14 +21,13 @@ export class ViewAppointmentsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    /*
-    this.route.params
-      .switchMap((params: Params) => this.appointmentService.getAppointmentsByBusinessId(+params['id']))
-      .subscribe(appointments => this.appointments = appointments);
-    */
-      this.appointmentService.getAppointmentsByBusinessId(75).then(appointments => this.appointments = appointments);
+    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser.accessLevel == 'Admin'){
+        this.appointmentService.getAppointmentsByBusinessId(currentUser.company_id).then(appointments => this.appointments = appointments);
+      }
   }
 }

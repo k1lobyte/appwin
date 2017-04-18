@@ -9,7 +9,7 @@ import { TerminalComponent }    from './terminal/terminal.component';
 import { AddEntryComponent }   from './terminal/addentry/add-entry.component';
 
 import { ScheduleAppointmentComponent }   from './schedule/schedule-appointment.component';
-import { ViewAppointmentsComponent }   from './appointment/view-appointments.component';
+import { ViewAppointmentsComponent }   from './admin/view-appointments.component';
 
 import { ViewEmployeesComponent }   from './admin/view-employees.component';
 import { ViewCustomersComponent }   from './admin/view-customers.component';
@@ -18,9 +18,10 @@ import { ViewQueueComponent }   from './employee/viewqueue.component';
 import { EmployeeComponent }    from './employee/employee.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/search', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'about', redirectTo: '/login' },
     { path: 'business/:id', component: BusinessDetailComponent },
     { path: 'schedule-appointment/:businessid/:serviceid',
             component: ScheduleAppointmentComponent,

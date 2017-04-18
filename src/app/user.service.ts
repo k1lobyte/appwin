@@ -20,4 +20,9 @@ export class UserService {
   getUser(id: number): Promise<User> {
     return this.getUsers().then(users => users.find(user => user.id === id));
   }
+
+  getLoginUser(username: string, password: string): Promise<User> {
+    return this.getUsers().then(users => users.find(user =>
+      (user.userName === username || user.email === username) && user.password === password));
+  }
 }
