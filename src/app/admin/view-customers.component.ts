@@ -3,7 +3,7 @@ import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
-
+import { AuthService } from './../auth.service';
 import { User }     from './../user';
 import { UserService }   from './../user.service';
 
@@ -20,10 +20,13 @@ export class ViewCustomersComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-      // HARD CODED BUSINESS ID
-      this.UserService.getUsersByAccessLevelAndBusiness(75, 'Guest').then(customers => this.customers = customers);
+      var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser.accessLevel == 'Admin'){
+        this.UserService.getUsersByAccessLevelAndBusiness(currentUser.company_id, 'Guest').then(customers => this.customers = customers);
+      }
   }
 }

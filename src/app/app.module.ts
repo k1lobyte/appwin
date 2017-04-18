@@ -1,9 +1,10 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
+import { AuthService } from './auth.service';
 import { MainMenu } from './menu/main-menu.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent }   from './login/login.component';
@@ -15,7 +16,7 @@ import { ServicesService }  from './service/services.service'
 import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.component';
 import { FeedbackService }  from './feedback/feedback.service';
 import { AppointmentService }  from './appointment/appointment.service';
-import { ViewAppointmentsComponent }  from './appointment/view-appointments.component';
+import { ViewAppointmentsComponent }  from './admin/view-appointments.component';
 import { AppointmentDetailComponent }  from './appointment/appointment-detail.component';
 import { TerminalComponent }    from './terminal/terminal.component';
 import { TerminalService }      from './terminal/terminal.service';
@@ -29,6 +30,7 @@ import { EmployeeComponent }    from './employee/employee.component';
   imports:      [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -47,7 +49,7 @@ import { EmployeeComponent }    from './employee/employee.component';
     EmployeeComponent,
   ],
 
-  providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService,
+  providers: [ AuthService, LoginGuard, BusinessService, ServicesService, FeedbackService,
        AppointmentService, TerminalService, UserService ],
 
   bootstrap:    [ AppComponent ]
