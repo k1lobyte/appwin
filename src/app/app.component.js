@@ -10,7 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var auth_service_1 = require("./auth.service");
+<<<<<<< HEAD
 var business_service_1 = require("./business/business.service");
+=======
+var api_business_service_1 = require("./business/api.business.service");
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 var AppComponent = (function () {
     function AppComponent(authService, businessService) {
         var _this = this;
@@ -48,7 +52,11 @@ AppComponent = __decorate([
         template: "\n      <div class=\"container-fluid\" style=\"margin:10px 0px;\">\n        <img src=\"{{logoURL}}\" alt=\"{{name}}\">\n          <div class=\"jumbotron\" *ngIf=\"loggedIn && business\">\n            <h1>{{business.name}}</h1>\n            <p>{{business.description}}</p>\n          </div>\n      </div>\n      <main-menu [loggedIn]=\"loggedIn\" [user]=\"user\"></main-menu>\n      <router-outlet class=\"col-xs-12 col-sm-10\"><router-outlet>\n      "
     }),
     __metadata("design:paramtypes", [auth_service_1.AuthService,
+<<<<<<< HEAD
         business_service_1.BusinessService])
+=======
+        api_business_service_1.BusinessService])
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

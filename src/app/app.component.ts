@@ -3,7 +3,11 @@ import { Subscription } from 'rxjs/Subscription';
 import { MainMenu } from './menu/main-menu.component';
 import { User } from './user'
 import { AuthService } from './auth.service';
+<<<<<<< HEAD
 import { BusinessService } from './business/business.service';
+=======
+import { BusinessService } from './business/api.business.service';
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 
 @Component({
   selector: 'my-app',

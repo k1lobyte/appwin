@@ -13,9 +13,9 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var router_2 = require("@angular/router");
-var business_service_1 = require("./business.service");
-var services_service_1 = require("./../service/services.service");
-var feedback_service_1 = require("./../feedback/feedback.service");
+var api_business_service_1 = require("./api.business.service");
+var api_services_service_1 = require("./../service/api.services.service");
+var api_feedback_service_1 = require("./../feedback/api.feedback.service");
 var BusinessDetailComponent = (function () {
     function BusinessDetailComponent(businessService, servicesService, feedbackService, router, route, location) {
         this.businessService = businessService;
@@ -28,7 +28,7 @@ var BusinessDetailComponent = (function () {
     BusinessDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.businessService.getBusiness(+params['id']); })
+            .switchMap(function (params) { return _this.businessService.getBusiness(params['id']); })
             .subscribe(function (business) { return _this.initialize(business); });
     };
     BusinessDetailComponent.prototype.initialize = function (business) {
@@ -47,9 +47,9 @@ BusinessDetailComponent = __decorate([
         selector: 'business-detail',
         templateUrl: './business-detail.component.html'
     }),
-    __metadata("design:paramtypes", [business_service_1.BusinessService,
-        services_service_1.ServicesService,
-        feedback_service_1.FeedbackService,
+    __metadata("design:paramtypes", [api_business_service_1.BusinessService,
+        api_services_service_1.ServicesService,
+        api_feedback_service_1.FeedbackService,
         router_2.Router,
         router_1.ActivatedRoute,
         common_1.Location])
