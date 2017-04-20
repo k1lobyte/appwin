@@ -1,0 +1,8 @@
+<div class="container-fluid" *ngIf="appointments">
+   <div class="well">
+     <h3>Appointments</h3>
+   </div>
+   <div *ngFor="let appointment of appointments">
+       <appointment-detail [appointment]=appointment></appointment-detail>
+  </div>
+</div>
