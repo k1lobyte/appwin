@@ -13,11 +13,11 @@ export class UserService {
     return this.getUsers().then(users => users.filter(user => user.accessLevel === accessLevel));
   }
 
-  getUsersByAccessLevelAndBusiness(businessid: number, accessLevel: string): Promise<User[]> {
-    return this.getUsers().then(users => users.filter(user => user.company_id == businessid && user.accessLevel === accessLevel));
+  getUsersByAccessLevelAndBusiness(businessid: string, accessLevel: string): Promise<User[]> {
+    return this.getUsers().then(users => users.filter(user => user.company_id === businessid && user.accessLevel === accessLevel));
   }
 
-  getUser(id: number): Promise<User> {
+  getUser(id: string): Promise<User> {
     return this.getUsers().then(users => users.find(user => user.id === id));
   }
 }

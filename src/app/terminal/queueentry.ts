@@ -1,6 +1,6 @@
 
 export class QueueEntry {
-    id: number;
+    id: string;
     name: string;
     email: string;
     phone: string;

@@ -9,7 +9,7 @@ export class FeedbackService {
     return Promise.resolve(FEEDBACK);
   }
 
-  getFeedbackByBusinessId(id: number): Promise<Feedback[]> {
+  getFeedbackByBusinessId(id: string): Promise<Feedback[]> {
     return this.getFeedback().then(feedback => feedback.filter(feedback => feedback.company_id === id));
   }
 }

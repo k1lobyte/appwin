@@ -1,11 +1,11 @@
 import { Service } from '../service/service';
 
 export class Business {
-    id: number;
+    id: string;
     name: string;
     //employees: Object [];
-    //services: Service [];
-    address:{
+    services: string [];
+    address: {
         street: string,
         city: string,
         state: string,

@@ -9,11 +9,11 @@ export class ServicesService {
     return Promise.resolve(SERVICES);
   }
 
-  getService(id: number): Promise<Service> {
+  getService(id: string): Promise<Service> {
     return this.getServices().then(services => services.find(service => service.id === id));
   }
 
-  getServicesByBusinessId(id: number): Promise<Service[]> {
+  getServicesByBusinessId(id: string): Promise<Service[]> {
     return this.getServices().then(services => services.filter(service => service.company_id === id));
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Business }     from './../business/business';
-import { BusinessService} from './../business/business.service';
+import { BusinessService} from './../business/api.business.service';
 
 @Component({
     selector: 'search',
@@ -22,6 +22,7 @@ export class SearchComponent implements OnInit {
       private businessService: BusinessService) { }
 
     ngOnInit(): void {
+      console.log('Get Businesses Called');
      this.getBusinesses();
     }
 

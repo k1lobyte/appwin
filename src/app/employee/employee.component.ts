@@ -18,6 +18,6 @@ export class EmployeeComponent implements OnInit {
     }
 
     getEntry(): void {
-        this.terminalService.getEntry(1).then(entry => this.currentCustomer = entry);
+        this.terminalService.getEntry('empID1').then(entry => this.currentCustomer = entry);
     }
 }

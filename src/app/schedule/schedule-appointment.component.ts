@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { Business }     from './../business/business';
-import { BusinessService}   from './../business/business.service';
+import { BusinessService}   from './../business/api.business.service';
 import { Service }     from './../service/service';
 import { ServicesService}   from './../service/services.service';
 
@@ -26,7 +26,7 @@ export class ScheduleAppointmentComponent {
 
     ngOnInit(): void {
       this.route.params
-        .switchMap((params: Params) => this.servicesService.getService(+params['serviceid']))
+        .switchMap((params: Params) => this.servicesService.getService(params['serviceid']))
         .subscribe(service => this.initialize(service));
     }
 
