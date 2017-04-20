@@ -13,8 +13,8 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var router_2 = require("@angular/router");
-var business_service_1 = require("./business.service");
-var services_service_1 = require("./../service/services.service");
+var api_business_service_1 = require("./api.business.service");
+var api_services_service_1 = require("./../service/api.services.service");
 var feedback_service_1 = require("./../feedback/feedback.service");
 var BusinessDetailComponent = (function () {
     function BusinessDetailComponent(businessService, servicesService, feedbackService, router, route, location) {
@@ -27,18 +27,26 @@ var BusinessDetailComponent = (function () {
     }
     BusinessDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.businessService.getBusiness(params['id']); })
-            .subscribe(function (business) { return _this.initialize(business); });
+        var id = this.route.snapshot.params['id'];
+        console.log('The ID is ' + id);
+        this.businessService.getBusiness(id)
+            .then(function (business) { return _this.initialize(business); })
+            .catch(this.handleError);
     };
     BusinessDetailComponent.prototype.initialize = function (business) {
         var _this = this;
         this.business = business;
+        console.log('Please...');
+        console.log(business);
         this.servicesService.getServicesByBusinessId(this.business.id).then(function (services) { return _this.services = services; });
         this.feedbackService.getFeedbackByBusinessId(this.business.id).then(function (feedback) { return _this.feedback = feedback; });
     };
     BusinessDetailComponent.prototype.onSelect = function (service) {
         this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
+    };
+    BusinessDetailComponent.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     };
     return BusinessDetailComponent;
 }());
@@ -47,8 +55,8 @@ BusinessDetailComponent = __decorate([
         selector: 'business-detail',
         templateUrl: './business-detail.component.html'
     }),
-    __metadata("design:paramtypes", [business_service_1.BusinessService,
-        services_service_1.ServicesService,
+    __metadata("design:paramtypes", [api_business_service_1.BusinessService,
+        api_services_service_1.ServicesService,
         feedback_service_1.FeedbackService,
         router_2.Router,
         router_1.ActivatedRoute,

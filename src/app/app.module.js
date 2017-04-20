@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var main_menu_component_1 = require("./menu/main-menu.component");
@@ -14,7 +15,7 @@ var search_component_1 = require("./search/search.component");
 var login_component_1 = require("./login/login.component");
 var user_service_1 = require("./user.service");
 var business_detail_component_1 = require("./business/business-detail.component");
-var business_service_1 = require("./business/business.service");
+var api_business_service_1 = require("./business/api.business.service");
 var login_guard_1 = require("./guard/login.guard");
 var services_service_1 = require("./service/services.service");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
@@ -56,8 +57,8 @@ AppModule = __decorate([
             viewqueue_component_1.ViewQueueComponent,
             employee_component_1.EmployeeComponent,
         ],
-        providers: [login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
-            appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService],
+        providers: [login_guard_1.LoginGuard, api_business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
+            appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService, http_1.HttpModule],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
