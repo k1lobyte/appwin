@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var business_service_1 = require("./../business/business.service");
+var api_business_service_1 = require("./../business/api.business.service");
 var SearchComponent = (function () {
     function SearchComponent(router, businessService) {
         this.router = router;
@@ -35,7 +35,7 @@ SearchComponent = __decorate([
         styles: ["\n        .panel {\n            margin: 5px;\n        }\n    "]
     }),
     __metadata("design:paramtypes", [router_1.Router,
-        business_service_1.BusinessService])
+        api_business_service_1.BusinessService])
 ], SearchComponent);
 exports.SearchComponent = SearchComponent;
 //# sourceMappingURL=search.component.js.map

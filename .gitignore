@@ -22,6 +22,22 @@
 *.js
 
 *.map
+<<<<<<< HEAD
+
+*.js
+
+*.map
+=======
+.editorconfig
+.idea/
+.vs/
+.vscode/
+LICENSE
+node_modules/
+non-essential-files.osx.txt
+non-essential-files.txt
+tslint.json
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 
 *.js
 

@@ -4,11 +4,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { Business }     from './business';
-import { BusinessService }   from './business.service';
+import { BusinessService }   from './api.business.service';
 import { Service }     from './../service/service';
-import { ServicesService }   from './../service/services.service';
+import { ServicesService }   from './../service/api.services.service';
 import { Feedback }     from './../feedback/feedback';
-import { FeedbackService }   from './../feedback/feedback.service';
+import { FeedbackService }   from './../feedback/api.feedback.service';
 
 @Component({
   selector: 'business-detail',
@@ -31,7 +31,7 @@ export class BusinessDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.businessService.getBusiness(+params['id']))
+      .switchMap((params: Params) => this.businessService.getBusiness(params['id']))
       .subscribe(business => this.initialize(business));
   }
 

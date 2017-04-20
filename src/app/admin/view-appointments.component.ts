@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 
 import { Appointment }     from './../appointment/appointment';
-import { AppointmentService }   from './../appointment/appointment.service';
+import { AppointmentService }   from './../appointment/api.appointments.service';
 
 @Component({
   selector: 'view-appointments',
@@ -25,9 +25,15 @@ export class ViewAppointmentsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+<<<<<<< HEAD:src/app/admin/view-appointments.component.ts
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser.accessLevel == 'Admin'){
         this.appointmentService.getAppointmentsByBusinessId(currentUser.company_id).then(appointments => this.appointments = appointments);
+=======
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser.accessLevel === 'Admin'){
+        this.appointmentService.getAllAppointmentsByBusinessID(currentUser.company_id).then(appointments => this.appointments = appointments);
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6:src/app/admin/view-appointments.component.ts
       }
   }
 }

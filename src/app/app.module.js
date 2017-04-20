@@ -9,19 +9,28 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
 var forms_1 = require("@angular/forms");
+<<<<<<< HEAD
+=======
+var http_1 = require("@angular/http");
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 var app_component_1 = require("./app.component");
 var auth_service_1 = require("./auth.service");
 var main_menu_component_1 = require("./menu/main-menu.component");
 var search_component_1 = require("./search/search.component");
 var login_component_1 = require("./login/login.component");
-var user_service_1 = require("./user.service");
+var api_user_service_1 = require("./api.user.service");
 var business_detail_component_1 = require("./business/business-detail.component");
-var business_service_1 = require("./business/business.service");
+var api_business_service_1 = require("./business/api.business.service");
 var login_guard_1 = require("./guard/login.guard");
-var services_service_1 = require("./service/services.service");
+var api_services_service_1 = require("./service/api.services.service");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
+<<<<<<< HEAD
 var feedback_service_1 = require("./feedback/feedback.service");
 var appointment_service_1 = require("./appointment/appointment.service");
+=======
+var api_feedback_service_1 = require("./feedback/api.feedback.service");
+var api_appointments_service_1 = require("./appointment/api.appointments.service");
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
 var view_appointments_component_1 = require("./admin/view-appointments.component");
 var appointment_detail_component_1 = require("./appointment/appointment-detail.component");
 var terminal_component_1 = require("./terminal/terminal.component");
@@ -41,7 +50,12 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
+<<<<<<< HEAD
             forms_1.FormsModule
+=======
+            forms_1.FormsModule,
+            http_1.HttpModule
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -59,8 +73,13 @@ AppModule = __decorate([
             viewqueue_component_1.ViewQueueComponent,
             employee_component_1.EmployeeComponent,
         ],
+<<<<<<< HEAD
         providers: [auth_service_1.AuthService, login_guard_1.LoginGuard, business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
             appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService],
+=======
+        providers: [auth_service_1.AuthService, login_guard_1.LoginGuard, api_business_service_1.BusinessService, api_services_service_1.ServicesService, api_feedback_service_1.FeedbackService,
+            api_appointments_service_1.AppointmentService, terminal_service_1.TerminalService, api_user_service_1.UserService, http_1.HttpModule],
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

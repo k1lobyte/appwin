@@ -1,8 +1,8 @@
 export class Feedback {
-   id: number;
-   appointment_Id: number;
-   company_id: number;
-   employee_Id: number;
+   id: string;
+   appointment_Id: string;
+   company_id: string;
+   employee_Id: string;
    rating: number;
    comment: string;
 }

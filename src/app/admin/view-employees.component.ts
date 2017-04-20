@@ -5,7 +5,7 @@ import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { User }     from './../user';
-import { UserService }   from './../user.service';
+import { UserService }   from './../api.user.service';
 
 @Component({
   selector: 'view-employeess',
@@ -24,8 +24,13 @@ export class ViewEmployeesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+<<<<<<< HEAD
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser.accessLevel == 'Admin'){
+=======
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser.accessLevel === 'Admin'){
+>>>>>>> 86fc2b01b869d28fd4e979ab2820f1100fe76ab6
       this.UserService.getUsersByAccessLevelAndBusiness(currentUser.company_id, 'Guest').then(employees => this.employees = employees);
     }
   }
