@@ -24,6 +24,6 @@ export class ViewCustomersComponent implements OnInit {
 
   ngOnInit(): void {
       // HARD CODED BUSINESS ID
-      this.UserService.getUsersByAccessLevelAndBusiness(75, 'Guest').then(customers => this.customers = customers);
+      this.UserService.getUsersByAccessLevelAndBusiness('empID1', 'Guest').then(customers => this.customers = customers);
   }
 }

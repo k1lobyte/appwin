@@ -26,7 +26,7 @@ export class ScheduleAppointmentComponent {
 
     ngOnInit(): void {
       this.route.params
-        .switchMap((params: Params) => this.servicesService.getService(+params['serviceid']))
+        .switchMap((params: Params) => this.servicesService.getService(params['serviceid']))
         .subscribe(service => this.initialize(service));
     }
 

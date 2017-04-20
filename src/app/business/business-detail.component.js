@@ -28,7 +28,7 @@ var BusinessDetailComponent = (function () {
     BusinessDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.businessService.getBusiness(+params['id']); })
+            .switchMap(function (params) { return _this.businessService.getBusiness(params['id']); })
             .subscribe(function (business) { return _this.initialize(business); });
     };
     BusinessDetailComponent.prototype.initialize = function (business) {

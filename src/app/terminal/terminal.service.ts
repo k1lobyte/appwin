@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TerminalService {
 
-    getEntry(id: number): Promise<QueueEntry> {
+    getEntry(id: string): Promise<QueueEntry> {
         return this.getQueue().then(queues => queues.find(queue => queue.id === id));
     }
 

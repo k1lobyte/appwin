@@ -9,7 +9,7 @@ export class BusinessService {
     return Promise.resolve(BUSINESSES);
   }
 
-  getBusiness(id: number): Promise<Business> {
+  getBusiness(id: string): Promise<Business> {
     return this.getBusinesses().then(businesses => businesses.find(business => business.id === id));
   }
 }

@@ -9,11 +9,11 @@ export class AppointmentService {
     return Promise.resolve(APPOINTMENTS);
   }
 
-  getAppointment(id: number): Promise<Appointment> {
+  getAppointment(id: string): Promise<Appointment> {
     return this.getAppointments().then(appointments => appointments.find(appointment => appointment.id === id));
   }
 
-  getAppointmentsByBusinessId(id: number): Promise<Appointment[]> {
+  getAppointmentsByBusinessId(id: string): Promise<Appointment[]> {
     return this.getAppointments().then(appointments => appointments.filter(appointment => appointment.company_Id === id));
   }
 }
