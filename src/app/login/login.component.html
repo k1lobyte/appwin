@@ -4,18 +4,20 @@
             <div class="col-xs-12">
                 <h2>Please Login</h2>
                 <div class="col-sm-8 col-xs-12 col-sm-offset-2">
-                    <form>
+                    <form (ngSubmit)="login()" #loginForm="ngForm">
                         <div class="form-group text-left">
-                            <label for="emailInput">Email:</label>
+                            <label for="userInput">Email:</label>
                             <input type="email" class="form-control"
-                                input="emailInput">
+                                input="userInput" [(ngModel)]="model.username" name="username" #username="ngModel">
                         </div>
                         <div class="form-group text-left">
                             <label for="passInput">Password:</label>
                             <input type="password" class="form-control"
-                                input="emailInput">
+                                input="passInput" [(ngModel)]="model.password" name="password" #password="ngModel">
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <div class="form-group text-right">
+                          <button type="submit" class="btn btn-default">Login</button>
+                        </div>
                     </form>
                 </div>
             </div>

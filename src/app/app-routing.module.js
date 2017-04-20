@@ -14,15 +14,16 @@ var login_guard_1 = require("./guard/login.guard");
 var terminal_component_1 = require("./terminal/terminal.component");
 var add_entry_component_1 = require("./terminal/addentry/add-entry.component");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
-var view_appointments_component_1 = require("./appointment/view-appointments.component");
+var view_appointments_component_1 = require("./admin/view-appointments.component");
 var view_employees_component_1 = require("./admin/view-employees.component");
 var view_customers_component_1 = require("./admin/view-customers.component");
 var viewqueue_component_1 = require("./employee/viewqueue.component");
 var employee_component_1 = require("./employee/employee.component");
 var routes = [
-    { path: '', redirectTo: '/search', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'search', component: search_component_1.SearchComponent },
     { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'about', redirectTo: '/login' },
     { path: 'business/:id', component: business_detail_component_1.BusinessDetailComponent },
     { path: 'schedule-appointment/:businessid/:serviceid',
         component: schedule_appointment_component_1.ScheduleAppointmentComponent,

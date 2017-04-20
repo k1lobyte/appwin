@@ -7,9 +7,9 @@ export class User {
     };
     password: string;
     loginStatus: boolean;
-    email: string;
+    email: string
     admin: boolean;
     accessLevel: string;
-    services: [string];
+    services: string[];
     company_id: string;
 }

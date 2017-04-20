@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Business }     from './../business/business';
 import { BusinessService}   from './../business/api.business.service';
 import { Service }     from './../service/service';
-import { ServicesService}   from './../service/services.service';
+import { ServicesService}   from './../service/api.services.service';
 
 @Component({
   selector: 'schedule-appointment',

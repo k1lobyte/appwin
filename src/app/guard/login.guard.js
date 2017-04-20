@@ -9,27 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var auth_service_1 = require("./../auth.service");
 var router_1 = require("@angular/router");
 var LoginGuard = (function () {
-    function LoginGuard(router) {
+    function LoginGuard(router, authService) {
         this.router = router;
+        this.authService = authService;
     }
     LoginGuard.prototype.canActivate = function (route, state) {
-        //if(LocalStorage.getItem('currentUser')) {
-        //    return true;
-        //}
-        return true;
-        // if(false) {
-        //     return true;
-        // }
-        //  this.router.navigate(['/login']);
-        //return false;
+        if (localStorage.getItem('currentUser')) {
+            return true;
+        }
+        else {
+            this.router.navigate(['/login']);
+            return false;
+        }
     };
     return LoginGuard;
 }());
 LoginGuard = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [router_1.Router,
+        auth_service_1.AuthService])
 ], LoginGuard);
 exports.LoginGuard = LoginGuard;
 //# sourceMappingURL=login.guard.js.map

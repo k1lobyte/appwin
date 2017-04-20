@@ -3,19 +3,18 @@
         <div class="panel-heading">Menu</div>
         <div class="panel-body">
             <ul class="nav nav-stacked">
-                <li><a routerLink="/login" routerLinkActive="active" class="btn btn-primary">Login</a></li>
-                <li><a routerLink="/search" routerLinkActive="active" class="btn btn-primary">Search Businesses</a></li>
-                <li><a routerLink="/view-appointments" routerLinkActive="active" class="btn btn-primary">Appointments</a></li>
-                <li><a routerLink="/admin" routerLinkActive="active" class="btn btn-primary">About AppWin</a></li>
-                <div><u>Admin</u></div>
-                <li><a routerLink="/view-employees" routerLinkActive="active" class="btn btn-primary">Employees</a></li>
-                <li><a routerLink="/view-customers" routerLinkActive="active" class="btn btn-primary">Customers</a></li>
-                <li><a routerLink="/terminal" routerLinkActive="active" class="btn btn-primary">Terminal</a></li>
-                <div><u>Employee</u></div>
-                <li><a routerLink="/employee" routerLinkActive="active" class="btn btn-primary">Dashboard</a></li>
-                <li><a routerLink="/employee/view-queue" routerLinkActive="active" class="btn btn-primary">Queue</a></li>
-
-
+                <li *ngIf="loggedIn === false"><a routerLink="/login" routerLinkActive="active" class="btn btn-default">Login</a></li>
+                <li *ngIf="loggedIn === true"><a routerLink="/login" routerLinkActive="active" class="btn btn-default" (click)="logout()">Logout ({{user.userName}})</a></li>
+                <li><a routerLink="/search" routerLinkActive="active" class="btn btn-default">Search Businesses</a></li>
+                <li><a routerLink="/about" routerLinkActive="active" class="btn btn-default">About AppWin</a></li>
+                <!--Admin-->
+                <li *ngIf="user && user.accessLevel== 'Admin'"><a routerLink="/view-appointments" routerLinkActive="active" class="btn btn-default">Appointments</a></li>
+                <li *ngIf="user && user.accessLevel== 'Admin'"><a routerLink="/view-employees" routerLinkActive="active" class="btn btn-default">Employees</a></li>
+                <li *ngIf="user && user.accessLevel== 'Admin'"><a routerLink="/view-customers" routerLinkActive="active" class="btn btn-default">Customers</a></li>
+                <li *ngIf="user && user.accessLevel== 'Admin'"><a routerLink="/terminal" routerLinkActive="active" class="btn btn-default">Terminal</a></li>
+                <!--Employee-->
+                <li *ngIf="user && user.accessLevel==='Employee'"><a routerLink="/employee" routerLinkActive="active" class="btn btn-default">Dashboard</a></li>
+                <li *ngIf="user && user.accessLevel==='Employee'"><a routerLink="/employee/view-queue" routerLinkActive="active" class="btn btn-default">Queue</a></li>
             </ul>
         </div>
     </div>

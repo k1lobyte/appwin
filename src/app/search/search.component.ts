@@ -22,7 +22,6 @@ export class SearchComponent implements OnInit {
       private businessService: BusinessService) { }
 
     ngOnInit(): void {
-      console.log('Get Businesses Called');
      this.getBusinesses();
     }
 

@@ -1,13 +1,12 @@
 import { User }   from './user';
-import { UserService }   from './user.service';
+import { UserService }   from './api.user.service';
 import { Injectable } from '@angular/core';
-//import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class AuthService{
+export class AuthService {
   private subject = new Subject<any>();
 
   constructor(
@@ -27,13 +26,13 @@ export class AuthService{
            });
         */
 
-      /*  return this.userService.getLoginUser(username, password)
+        return this.userService.getLoginUser(username, password)
         .then(
             user => {
               let jsonUser = JSON.stringify(user);
               localStorage.setItem('currentUser', jsonUser);
               this.subject.next({ userData: jsonUser });
-          });*/
+          });
    }
 
    logout() {
