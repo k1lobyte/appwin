@@ -1,5 +1,5 @@
 export class Service {
-  id: number;
+  id: string;
   company_id: number;
   name: string;
   description: string;
