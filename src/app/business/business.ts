@@ -4,8 +4,8 @@ export class Business {
     id: string;
     name: string;
     //employees: Object [];
-    //services: Service [];
-    address:{
+    services: string [];
+    address: {
         street: string,
         city: string,
         state: string,

@@ -2,6 +2,8 @@ import { Service } from './service';
 import { Injectable } from '@angular/core';
 import { Headers, Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {Business} from "../business/business";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Injectable()
 export class ServicesService {
@@ -29,8 +31,14 @@ export class ServicesService {
     return this.getServices().then(services => services.find(service => service.id === id));
   }
 
-  getServicesByBusinessId(id: string): Promise<Service[]> {
-    return this.getServices().then(services => services.filter(service => service.company_id === id));
+  getServicesByBusinessId(busID : string): Promise<Service[]> {
+    let busURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/service';
+    console.log('Looking at URL: ' + busURL);
+    let res = this.http.get(busURL)
+      .toPromise().then(response => response.json() as Service[])
+      .catch(this.handleError);
+    console.log(res);
+    return res;
   }
 
   private handleError(error: any): Promise<any> {
