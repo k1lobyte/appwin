@@ -5,7 +5,7 @@ import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { User }     from './../user';
-import { UserService }   from './../user.service';
+import { UserService }   from './../api.user.service';
 
 @Component({
   selector: 'view-customers',
@@ -24,8 +24,8 @@ export class ViewCustomersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-      var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      if (currentUser.accessLevel == 'Admin'){
+      let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser.accessLevel === 'Admin') {
         this.UserService.getUsersByAccessLevelAndBusiness(currentUser.company_id, 'Guest').then(customers => this.customers = customers);
       }
   }

@@ -14,12 +14,12 @@ export class ServicesService {
       'X-Requested-By': 'Angular 2'
     }
   );
-  private serviceURL = 'http://rehket.asuscomm.com:3000/service/';  // URL to web api
+  private empURL = 'http://rehket.asuscomm.com:3000/employee';  // URL to web api
 
   constructor(private http: Http) { }
 
   getServices(): Promise<Service[]> {
-    let res = this.http.get(this.serviceURL)
+    let res = this.http.get(this.empURL)
       .toPromise()
       .then(response => response.json() as Service[])
       .catch(this.handleError);

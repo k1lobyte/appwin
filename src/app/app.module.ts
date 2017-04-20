@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
 import { MainMenu } from './menu/main-menu.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent }   from './login/login.component';
-import { UserService }  from './user.service';
+import { UserService }  from './api.user.service';
 import { BusinessDetailComponent } from './business/business-detail.component';
 import { BusinessService }  from './business/api.business.service';
 import { LoginGuard } from './guard/login.guard';

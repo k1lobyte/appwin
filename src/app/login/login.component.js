@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var user_service_1 = require("./../user.service");
+var api_user_service_1 = require("./../api.user.service");
 var auth_service_1 = require("./../auth.service");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
@@ -48,10 +48,10 @@ var LoginComponent = (function () {
 }());
 LoginComponent = __decorate([
     core_1.Component({
-        selector: "login",
-        templateUrl: "./login.component.html"
+        selector: 'login',
+        templateUrl: './login.component.html'
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService,
+    __metadata("design:paramtypes", [api_user_service_1.UserService,
         auth_service_1.AuthService,
         router_2.Router,
         router_1.ActivatedRoute,

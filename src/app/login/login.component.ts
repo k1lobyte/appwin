@@ -1,5 +1,5 @@
 import { Component, OnInit }    from '@angular/core';
-import { UserService }   from './../user.service';
+import { UserService }   from './../api.user.service';
 import { User } from './../user';
 import { AuthService } from './../auth.service';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -7,11 +7,11 @@ import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: "login",
-    templateUrl: "./login.component.html"
+    selector: 'login',
+    templateUrl: './login.component.html'
 })
 
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   loading = false;
   model = {
     username: '',

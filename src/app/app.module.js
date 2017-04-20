@@ -15,7 +15,7 @@ var auth_service_1 = require("./auth.service");
 var main_menu_component_1 = require("./menu/main-menu.component");
 var search_component_1 = require("./search/search.component");
 var login_component_1 = require("./login/login.component");
-var user_service_1 = require("./user.service");
+var api_user_service_1 = require("./api.user.service");
 var business_detail_component_1 = require("./business/business-detail.component");
 var api_business_service_1 = require("./business/api.business.service");
 var login_guard_1 = require("./guard/login.guard");
@@ -62,7 +62,7 @@ AppModule = __decorate([
             employee_component_1.EmployeeComponent,
         ],
         providers: [auth_service_1.AuthService, login_guard_1.LoginGuard, api_business_service_1.BusinessService, api_services_service_1.ServicesService, api_feedback_service_1.FeedbackService,
-            api_appointments_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService, http_1.HttpModule],
+            api_appointments_service_1.AppointmentService, terminal_service_1.TerminalService, api_user_service_1.UserService, http_1.HttpModule],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
