@@ -7,7 +7,7 @@
  import { Appointment }     from './../appointment/appointment';
  import { AppointmentService }   from './../appointment/appointment.service';
  import { Business }     from './../business/business';
- import { BusinessService }   from './../business/business.service';
+ import { BusinessService }   from './../business/api.business.service';
  import { Service }     from './../service/service';
  import { ServicesService }   from './../service/services.service';
 

@@ -1,7 +1,7 @@
 import { Business } from './business';
 
 import { Injectable } from '@angular/core';
-import { Headers, Http} from '@angular/http';
+import { Headers, Http, HttpModule} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 

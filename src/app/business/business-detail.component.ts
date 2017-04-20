@@ -5,12 +5,14 @@ import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { Business }     from './business';
 import { BusinessService }   from './api.business.service';
-import { Service }     from './../service/service';
-import { ServicesService }   from './../service/api.services.service';
-import { Feedback }     from './../feedback/feedback';
-import { FeedbackService }   from './../feedback/feedback.service';
+import { Service }     from '../service/service';
+import { ServicesService }   from '../service/api.services.service';
+import { Feedback }     from '../feedback/feedback';
+import { FeedbackService }   from '../feedback/api.feedback.service';
+import {HttpModule} from '@angular/http';
 
 @Component({
+  providers: [HttpModule],
   selector: 'business-detail',
   templateUrl: './business-detail.component.html'
 })
@@ -29,6 +31,13 @@ export class BusinessDetailComponent implements OnInit {
     private location: Location,
   ) {}
 
+  /*
+   ngOnInit(): void {
+   this.route.params
+   .switchMap((params: Params) => this.businessService.getBusiness(params['id']))
+   .subscribe(business => this.initialize(business));
+   }*/
+
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     console.log('The ID is ' + id);
@@ -36,6 +45,7 @@ export class BusinessDetailComponent implements OnInit {
       .then((business) => this.initialize(business))
       .catch(this.handleError);
   }
+
 
   initialize(business: Business): void {
     this.business = business;

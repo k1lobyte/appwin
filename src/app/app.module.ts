@@ -4,6 +4,7 @@ import { Headers, Http , HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { AppComponent }  from './app.component';
 import { MainMenu } from './menu/main-menu.component';
 import { SearchComponent } from './search/search.component';
@@ -12,9 +13,9 @@ import { UserService }  from './user.service';
 import { BusinessDetailComponent } from './business/business-detail.component';
 import { BusinessService }  from './business/api.business.service';
 import { LoginGuard } from './guard/login.guard';
-import { ServicesService }  from './service/services.service';
+import { ServicesService }  from './service/api.services.service';
 import { ScheduleAppointmentComponent }  from './schedule/schedule-appointment.component';
-import { FeedbackService }  from './feedback/feedback.service';
+import { FeedbackService }  from './feedback/api.feedback.service';
 import { AppointmentService }  from './appointment/appointment.service';
 import { ViewAppointmentsComponent }  from './appointment/view-appointments.component';
 import { AppointmentDetailComponent }  from './appointment/appointment-detail.component';
@@ -31,6 +32,7 @@ import { EmployeeComponent }    from './employee/employee.component';
   imports:      [
     BrowserModule,
     AppRoutingModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -49,8 +51,8 @@ import { EmployeeComponent }    from './employee/employee.component';
     EmployeeComponent,
   ],
 
-  providers: [ LoginGuard, BusinessService, ServicesService, FeedbackService,
-       AppointmentService, TerminalService, UserService, HttpModule ],
+  providers: [  LoginGuard, BusinessService, ServicesService, FeedbackService,
+    AppointmentService, TerminalService, UserService, HttpModule ],
 
   bootstrap:    [ AppComponent ]
 })

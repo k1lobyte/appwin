@@ -17,9 +17,9 @@ var user_service_1 = require("./user.service");
 var business_detail_component_1 = require("./business/business-detail.component");
 var api_business_service_1 = require("./business/api.business.service");
 var login_guard_1 = require("./guard/login.guard");
-var services_service_1 = require("./service/services.service");
+var api_services_service_1 = require("./service/api.services.service");
 var schedule_appointment_component_1 = require("./schedule/schedule-appointment.component");
-var feedback_service_1 = require("./feedback/feedback.service");
+var api_feedback_service_1 = require("./feedback/api.feedback.service");
 var appointment_service_1 = require("./appointment/appointment.service");
 var view_appointments_component_1 = require("./appointment/view-appointments.component");
 var appointment_detail_component_1 = require("./appointment/appointment-detail.component");
@@ -40,6 +40,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
+            http_1.HttpModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -57,7 +58,7 @@ AppModule = __decorate([
             viewqueue_component_1.ViewQueueComponent,
             employee_component_1.EmployeeComponent,
         ],
-        providers: [login_guard_1.LoginGuard, api_business_service_1.BusinessService, services_service_1.ServicesService, feedback_service_1.FeedbackService,
+        providers: [login_guard_1.LoginGuard, api_business_service_1.BusinessService, api_services_service_1.ServicesService, api_feedback_service_1.FeedbackService,
             appointment_service_1.AppointmentService, terminal_service_1.TerminalService, user_service_1.UserService, http_1.HttpModule],
         bootstrap: [app_component_1.AppComponent]
     })
