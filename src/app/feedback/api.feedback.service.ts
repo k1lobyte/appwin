@@ -26,12 +26,13 @@ export class FeedbackService {
     return res;
   }
 
-  getFeedbackByBusinessId(id: string): Promise<Feedback[]> {
-    let res = this.http.get(this.businessURL + id + '/feedback')
-      .toPromise()
-      .then(response => response.json() as Feedback[])
+  getFeedbackByBusinessId(busID: string): Promise<Feedback[]> {
+    let busURL = this.businessURL + busID + '/feedback';
+    console.log('Looking at URL: ' + busURL);
+    let res = this.http.get(busURL)
+      .toPromise().then(response => response.json() as Feedback[])
       .catch(this.handleError);
-
+    console.log(res);
     return res;
   }
 

@@ -31,7 +31,7 @@ export class ServicesService {
     return this.getServices().then(services => services.find(service => service.id === id));
   }
 
-  getServicesByBusinessId(busID : string): Promise<Service[]> {
+  getServicesByBusinessId(busID: string): Promise<Service[]> {
     let busURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/service';
     console.log('Looking at URL: ' + busURL);
     let res = this.http.get(busURL)
