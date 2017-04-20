@@ -25,7 +25,7 @@ export class ViewEmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser.accessLevel === 'Admin'){
+    if (currentUser.accessLevel === 'Admin') {
       this.UserService.getUsersByAccessLevelAndBusiness(currentUser.company_id, 'Guest').then(employees => this.employees = employees);
     }
   }
