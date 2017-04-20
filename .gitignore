@@ -22,3 +22,12 @@
 *.js
 
 *.map
+.editorconfig
+.idea/
+.vs/
+.vscode/
+LICENSE
+node_modules/
+non-essential-files.osx.txt
+non-essential-files.txt
+tslint.json

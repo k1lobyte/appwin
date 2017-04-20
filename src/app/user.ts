@@ -1,15 +1,15 @@
 export class User {
-    id: string;
-    userName: string;
-    name: {
+    id: number;
+    userName: Object;
+    name:{
         fName: string;
         lName: string;
     };
     password: string;
     loginStatus: boolean;
-    email: string;
+    email: string
     admin: boolean;
     accessLevel: string;
-    services: [string];
-    company_id: string;
+    services: Object;
+    company_id: number
 }

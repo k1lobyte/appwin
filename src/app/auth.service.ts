@@ -27,13 +27,13 @@ export class AuthService{
            });
         */
 
-      /*  return this.userService.getLoginUser(username, password)
+        return this.userService.getLoginUser(username, password)
         .then(
             user => {
-              let jsonUser = JSON.stringify(user);
+              var jsonUser = JSON.stringify(user);
               localStorage.setItem('currentUser', jsonUser);
               this.subject.next({ userData: jsonUser });
-          });*/
+          });
    }
 
    logout() {

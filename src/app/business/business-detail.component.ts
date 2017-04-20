@@ -5,14 +5,12 @@ import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { Business }     from './business';
 import { BusinessService }   from './api.business.service';
-import { Service }     from '../service/service';
-import { ServicesService }   from '../service/api.services.service';
-import { Feedback }     from '../feedback/feedback';
-import { FeedbackService }   from '../feedback/api.feedback.service';
-import {HttpModule} from '@angular/http';
+import { Service }     from './../service/service';
+import { ServicesService }   from './../service/api.services.service';
+import { Feedback }     from './../feedback/feedback';
+import { FeedbackService }   from './../feedback/api.feedback.service';
 
 @Component({
-  providers: [HttpModule],
   selector: 'business-detail',
   templateUrl: './business-detail.component.html'
 })
@@ -31,36 +29,19 @@ export class BusinessDetailComponent implements OnInit {
     private location: Location,
   ) {}
 
-  /*
-   ngOnInit(): void {
-   this.route.params
-   .switchMap((params: Params) => this.businessService.getBusiness(params['id']))
-   .subscribe(business => this.initialize(business));
-   }*/
-
   ngOnInit(): void {
-    let id = this.route.snapshot.params['id'];
-    console.log('The ID is ' + id);
-    this.businessService.getBusiness(id)
-      .then((business) => this.initialize(business))
-      .catch(this.handleError);
+    this.route.params
+      .switchMap((params: Params) => this.businessService.getBusiness(params['id']))
+      .subscribe(business => this.initialize(business));
   }
-
 
   initialize(business: Business): void {
     this.business = business;
-    console.log('Please...');
-    console.log(business);
     this.servicesService.getServicesByBusinessId(this.business.id).then(services => this.services = services);
     this.feedbackService.getFeedbackByBusinessId(this.business.id).then(feedback => this.feedback = feedback);
   }
 
   onSelect(service: Service): void {
     this.router.navigate(['/schedule-appointment', this.business.id, service.id]);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
 }

@@ -3,7 +3,7 @@ import { Service } from '../service/service';
 export class Business {
     id: string;
     name: string;
-    //employees: Object [];
+    employees: string [];
     services: string [];
     address: {
         street: string,

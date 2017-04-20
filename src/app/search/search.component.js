@@ -17,7 +17,6 @@ var SearchComponent = (function () {
         this.businessService = businessService;
     }
     SearchComponent.prototype.ngOnInit = function () {
-        console.log('Get Businesses Called');
         this.getBusinesses();
     };
     SearchComponent.prototype.getBusinesses = function () {
