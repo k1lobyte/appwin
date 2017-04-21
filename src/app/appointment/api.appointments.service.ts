@@ -18,7 +18,7 @@ export class AppointmentService {
       'X-Requested-By': 'Angular 2'
     }
   );
-  private appointmentURL = 'http://rehket.asuscomm.com:3000/service/';  // URL to web api
+  private appointmentURL = 'http://rehket.asuscomm.com:3000/';  // URL to web api
 
   constructor(private http: Http) { }
 
@@ -45,8 +45,8 @@ export class AppointmentService {
     return res;
   }
 
-  getPastAppointmentsByBusinessId(apptID: string): Promise<Appointment[]> {
-    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + apptID + '/service';
+  getPastAppointmentsByBusinessId(busID: string): Promise<Appointment[]> {
+    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/past';
     console.log('Looking at URL: ' + apptURL);
     let res = this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
@@ -55,8 +55,8 @@ export class AppointmentService {
     return res;
   }
 
-  getAllAppointmentsByBusinessID(apptID: string): Promise<Appointment[]> {
-    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + apptID + '/service';
+  getAllAppointmentsByBusinessID(busID: string): Promise<Appointment[]> {
+    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/all';
     console.log('Looking at URL: ' + apptURL);
     let res = this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
