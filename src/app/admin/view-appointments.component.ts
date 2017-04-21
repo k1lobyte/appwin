@@ -29,6 +29,7 @@ export class ViewAppointmentsComponent implements OnInit {
     console.log('A wild User Appeared!!');
     if (currentUser.accessLevel === 'Admin') {
       console.log('They are Admin!');
+      console.log('The Company is ' + currentUser.company_id);
         this.appointmentService.getAllAppointmentsByBusinessID(currentUser.company_id).then(appointments => this.appointments = appointments);
       }
   }

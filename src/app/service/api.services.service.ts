@@ -14,21 +14,29 @@ export class ServicesService {
       'X-Requested-By': 'Angular 2'
     }
   );
-  private empURL = 'http://rehket.asuscomm.com:3000/employee';  // URL to web api
+  private svcURL = 'http://rehket.asuscomm.com:3000/service';  // URL to web api
 
   constructor(private http: Http) { }
 
   getServices(): Promise<Service[]> {
-    let res = this.http.get(this.empURL)
+
+    let res = this.http.get(this.svcURL)
       .toPromise()
       .then(response => response.json() as Service[])
       .catch(this.handleError);
-
+    console.log('getting a service!');
+    console.log(res);
     return res;
   }
 
   getService(id: string): Promise<Service> {
-    return this.getServices().then(services => services.find(service => service.id === id));
+    console.log('Looking for Service of ID: ' + id);
+    let svc = this.http.get(this.svcURL + '/' + id)
+      .toPromise().then(response => response.json() as Service)
+      .catch(this.handleError);
+    console.log('Found Service of:\n');
+    console.log(svc);
+    return svc;
   }
 
   getServicesByBusinessId(busID: string): Promise<Service[]> {

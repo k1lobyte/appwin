@@ -1,4 +1,4 @@
-<div *ngIf="appointment && service && business">
+<div *ngIf="appointment && service && business && employee">
    <div class="panel panel-default">
      <div class="panel-heading">
        <h4>
@@ -13,9 +13,9 @@
      <div class="panel-body">
        <!-- Appointment Details -->
        <h5>Appointment Details</h5>
-       <div *ngIf="appointment.status !== 'Completed'">Begins at [insert time]</div>
+       <div *ngIf="appointment.status !== 'Completed'">Begins at {{appointment.appointmentDate}}</div>
        <div *ngIf="appointment.status === 'Completed'">Completed at {{appointment.endTime}}</div>
-      <div>Service by [insert employee name]</div>
+      <div>Service by {{employee.name.fName}}</div>
        <!-- Customer Details -->
        <h5>Customer Information</h5>
        <div>{{appointment.customerContact.fName}} {{appointment.customerContact.lName}}</div>
