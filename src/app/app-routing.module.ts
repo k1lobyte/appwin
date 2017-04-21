@@ -35,8 +35,8 @@ const routes: Routes = [
     { path: 'view-customers',
             component: ViewCustomersComponent,
             canActivate: [LoginGuard]},
-    { path: 'terminal', component: TerminalComponent, canActivate: [LoginGuard]},
-    { path: 'terminal/add-entry', component: AddEntryComponent, canActivate: [LoginGuard]},
+    { path: 'terminal/:busID', component: TerminalComponent, canActivate: [LoginGuard]},
+    { path: 'terminal/:busID/add-entry', component: AddEntryComponent, canActivate: [LoginGuard]},
     { path: 'employee', component: EmployeeComponent, canActivate: [LoginGuard]},
     { path: 'employee/view-queue', component: ViewQueueComponent, canActivate: [LoginGuard]},
 

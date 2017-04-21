@@ -37,8 +37,8 @@ var routes = [
     { path: 'view-customers',
         component: view_customers_component_1.ViewCustomersComponent,
         canActivate: [login_guard_1.LoginGuard] },
-    { path: 'terminal', component: terminal_component_1.TerminalComponent, canActivate: [login_guard_1.LoginGuard] },
-    { path: 'terminal/add-entry', component: add_entry_component_1.AddEntryComponent, canActivate: [login_guard_1.LoginGuard] },
+    { path: 'terminal/:busID', component: terminal_component_1.TerminalComponent, canActivate: [login_guard_1.LoginGuard] },
+    { path: 'terminal/:busID/add-entry', component: add_entry_component_1.AddEntryComponent, canActivate: [login_guard_1.LoginGuard] },
     { path: 'employee', component: employee_component_1.EmployeeComponent, canActivate: [login_guard_1.LoginGuard] },
     { path: 'employee/view-queue', component: viewqueue_component_1.ViewQueueComponent, canActivate: [login_guard_1.LoginGuard] },
 ];

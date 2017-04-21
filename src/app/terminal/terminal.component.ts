@@ -28,6 +28,4 @@ export class TerminalComponent implements OnInit {
     toEntry(): void {
         this.router.navigate(['terminal/add-entry']);
     }
-
-    
 }
