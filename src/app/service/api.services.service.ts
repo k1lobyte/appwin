@@ -42,11 +42,9 @@ export class ServicesService {
   getServicesByBusinessId(busID: string): Promise<Service[]> {
     let busURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/service';
     console.log('Looking at URL: ' + busURL);
-    let res = this.http.get(busURL)
+    return this.http.get(busURL)
       .toPromise().then(response => response.json() as Service[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
   }
 
   private handleError(error: any): Promise<any> {
