@@ -1,4 +1,7 @@
- import 'rxjs/add/operator/switchMap';
+/*This Component is responsible for building the appointment components for employees and admins.
+* */
+
+import 'rxjs/add/operator/switchMap';
  import { Component, OnInit, Input }      from '@angular/core';
  import { ActivatedRoute, Params } from '@angular/router';
  import { Location }               from '@angular/common';
@@ -42,7 +45,7 @@
      this.servicesService.getService(this.appointment.service_Id).then(service => this.service = service);
      this.businessService.getBusiness(this.appointment.company_Id).then(business => this.business = business);
      this.userService.getUser(this.appointment.employee_Id).then(employee => this.employee = employee);
-     //this.time = this.appointment.appointmentDate.getHours().toString();
+
    }
 
    //

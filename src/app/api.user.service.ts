@@ -11,12 +11,12 @@ export class UserService {
       'X-Requested-By': 'Angular 2'
     }
   );
-  private serviceURL = 'http://rehket.asuscomm.com:3000/employee';  // URL to web api
-
+  private empURL = 'http://rehket.asuscomm.com:3000/employee';  // URL to web api
+  private compURL = 'http://rehket.asuscomm.com:3000/company';
   constructor(private http: Http) { }
 
   getUsers(): Promise<User[]> {
-    let res = this.http.get(this.serviceURL)
+    let res = this.http.get(this.empURL)
       .toPromise()
       .then(response => response.json() as User[])
       .catch(this.handleError);
@@ -28,7 +28,12 @@ export class UserService {
   }
 
   getUsersByAccessLevelAndBusiness(businessid: string, accessLevel: string): Promise<User[]> {
-    return this.getUsers().then(users => users.filter(user => user.company_id === businessid && user.accessLevel === accessLevel));
+    let res = this.http.get(this.compURL + '/' + businessid + '/employee')
+      .toPromise()
+      .then(response => response.json() as User[])
+      .catch(this.handleError);
+
+    return res;
   }
 
   getUser(id: string): Promise<User> {
