@@ -3,9 +3,9 @@
 This Express App is the API for our appointment service. This was made for COP 4331 Processes of Object Oriented Software Development at University of Central Florida.
 
 Team Members include:<br>
-Alec Swanson<br>
-Brooke Norton<br>
-Adam Albright<br>
+Alec Swanson https://github.com/k1lobyte <br>
+Brooke Norton https://github.com/nortonbrooke <br>
+Adam Albright https://github.com/rehket<br>
 Francisco Tirado Perez<br>
 Huy Quang Vo<br>
 Omar Hamouda<br>
