@@ -2,7 +2,7 @@
    <div class="panel panel-default">
      <div class="panel-heading">
        <h4>
-         <span>{{service.name}} </span>
+         <span>{{appointment.customerContact.fName}} is getting {{service.name}} </span>
          <span class="label pull-right"
                [class.label-default]="appointment.status === 'Confirmed'"
                [class.label-success]="appointment.status === 'Completed'"
