@@ -2,7 +2,7 @@ import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
-import { Business }     from './../business/business';
+import { Business } from './../business/business';
 import { BusinessService}   from './../business/api.business.service';
 import { Service }     from './../service/service';
 import { ServicesService}   from './../service/api.services.service';
@@ -26,14 +26,14 @@ export class ScheduleAppointmentComponent {
 
     ngOnInit(): void {
       console.log(this.route.params);
-      console.log('Schedule AppointmentComponent.');
+      console.log('Schedule Appointment Component ONInit.');
       this.route.params
         .switchMap((params: Params) => this.servicesService.getService(params['serviceid']))
         .subscribe(service => this.initialize(service));
     }
 
     initialize(service: Service): void {
-      console.log('Schedule Appointment Component.');
+      console.log('Schedule Appointment Component Init.');
       this.service = service;
       this.businessService.getBusiness(this.service.company_id).then(business => this.business = business);
     }

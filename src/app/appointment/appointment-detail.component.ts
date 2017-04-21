@@ -36,15 +36,16 @@
      this.businessService.getBusiness(this.appointment.company_Id).then(business => this.business = business);
    }
 
-   reject(appointment: Appointment): void{
+   //
+   reject(appointment: Appointment): void {
 
    }
 
-   confirm(appointment: Appointment): void{
+   confirm(appointment: Appointment): void {
 
    }
 
-   complete(appointment: Appointment): void{
+   complete(appointment: Appointment): void {
 
    }
  }
