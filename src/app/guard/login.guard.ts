@@ -11,9 +11,10 @@ export class LoginGuard implements CanActivate {
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if(localStorage.getItem('currentUser')) {
+        if (localStorage.getItem('currentUser')) {
+          console.log('Admin Guard Activated!');
           return true;
-        }else{
+        }else {
           this.router.navigate(['/login']);
           return false;
         }

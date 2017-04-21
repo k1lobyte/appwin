@@ -26,7 +26,9 @@ export class ViewAppointmentsComponent implements OnInit {
 
   ngOnInit(): void {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser.accessLevel === 'Admin'){
+    console.log('A wild User Appeared!!');
+    if (currentUser.accessLevel === 'Admin') {
+      console.log('They are Admin!');
         this.appointmentService.getAllAppointmentsByBusinessID(currentUser.company_id).then(appointments => this.appointments = appointments);
       }
   }

@@ -36,7 +36,7 @@ export class AppointmentService {
   }
 
   getFutureAppointmentsByBusinessId(apptID: string): Promise<Appointment[]> {
-    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + apptID + '/service';
+    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + apptID + '/appointment/future';
     console.log('Looking at URL: ' + apptURL);
     let res = this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
@@ -46,7 +46,7 @@ export class AppointmentService {
   }
 
   getPastAppointmentsByBusinessId(busID: string): Promise<Appointment[]> {
-    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/past';
+    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/appointment/past';
     console.log('Looking at URL: ' + apptURL);
     let res = this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
@@ -56,7 +56,7 @@ export class AppointmentService {
   }
 
   getAllAppointmentsByBusinessID(busID: string): Promise<Appointment[]> {
-    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/all';
+    let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/appointment/all';
     console.log('Looking at URL: ' + apptURL);
     let res = this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])

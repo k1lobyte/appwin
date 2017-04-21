@@ -16,6 +16,7 @@ export class ViewQueueComponent implements OnInit {
         private terminalService: TerminalService) {}
 
     ngOnInit(): void {
+      console.log('This is a Test');
         this.getQueue();
     }
 

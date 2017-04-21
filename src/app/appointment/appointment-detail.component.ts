@@ -31,6 +31,7 @@
    ) {}
 
    ngOnInit(): void {
+     console.log('Appointments Log');
      this.servicesService.getService(this.appointment.service_Id).then(service => this.service = service);
      this.businessService.getBusiness(this.appointment.company_Id).then(business => this.business = business);
    }

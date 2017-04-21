@@ -25,7 +25,7 @@ export class AuthService {
                }
            });
         */
-
+  console.log('User: ' + username + 'Pass: ' + password);
         return this.userService.getLoginUser(username, password)
         .then(
             user => {
@@ -38,6 +38,7 @@ export class AuthService {
    logout() {
        // Remove user from local storage to log user out
        localStorage.removeItem('currentUser');
+       console.log('User logged Out');
        this.subject.next();
    }
 

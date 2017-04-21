@@ -25,12 +25,15 @@ export class ScheduleAppointmentComponent {
     ) {}
 
     ngOnInit(): void {
+      console.log(this.route.params);
+      console.log('Schedule AppointmentComponent.');
       this.route.params
         .switchMap((params: Params) => this.servicesService.getService(params['serviceid']))
         .subscribe(service => this.initialize(service));
     }
 
     initialize(service: Service): void {
+      console.log('Schedule Appointment Component.');
       this.service = service;
       this.businessService.getBusiness(this.service.company_id).then(business => this.business = business);
     }
