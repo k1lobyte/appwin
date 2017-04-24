@@ -20,33 +20,27 @@ export class ServicesService {
 
   getServices(): Promise<Service[]> {
 
-    let res = this.http.get(this.svcURL)
+    return this.http.get(this.svcURL)
       .toPromise()
       .then(response => response.json() as Service[])
       .catch(this.handleError);
-    console.log('getting a service!');
-    console.log(res);
-    return res;
   }
 
   getService(id: string): Promise<Service> {
     console.log('Looking for Service of ID: ' + id);
-    let svc = this.http.get(this.svcURL + '/' + id)
+   return this.http.get(this.svcURL + '/' + id)
       .toPromise().then(response => response.json() as Service)
       .catch(this.handleError);
-    console.log('Found Service of:\n');
-    console.log(svc);
-    return svc;
+
   }
 
   getServicesByBusinessId(busID: string): Promise<Service[]> {
     let busURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/service';
     console.log('Looking at URL: ' + busURL);
-    let res = this.http.get(busURL)
+    return this.http.get(busURL)
       .toPromise().then(response => response.json() as Service[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
+
   }
 
   private handleError(error: any): Promise<any> {

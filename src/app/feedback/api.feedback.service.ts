@@ -18,22 +18,18 @@ export class FeedbackService {
 
 
   getFeedback(id: string): Promise<Feedback[]> {
-    let res = this.http.get(this.businessURL)
+    return this.http.get(this.businessURL)
       .toPromise()
       .then(response => response.json() as Feedback[])
       .catch(this.handleError);
-
-    return res;
   }
 
   getFeedbackByBusinessId(busID: string): Promise<Feedback[]> {
     let busURL = this.businessURL + busID + '/feedback';
     console.log('Looking at URL: ' + busURL);
-    let res = this.http.get(busURL)
+    return this.http.get(busURL)
       .toPromise().then(response => response.json() as Feedback[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
   }
 
   private handleError(error: any): Promise<any> {

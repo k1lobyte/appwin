@@ -6,7 +6,7 @@
                 <div class="col-sm-8 col-xs-12 col-sm-offset-2">
                     <form (ngSubmit)="login()" #loginForm="ngForm">
                         <div class="form-group text-left">
-                            <label for="userInput">Email:</label>
+                            <label for="userInput">Email or Username:</label>
                             <input type="email" class="form-control"
                                 input="userInput" [(ngModel)]="model.username" name="username" #username="ngModel">
                         </div>

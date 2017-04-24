@@ -6,19 +6,32 @@ import { Business } from './../business/business';
 import { BusinessService}   from './../business/api.business.service';
 import { Service }     from './../service/service';
 import { ServicesService}   from './../service/api.services.service';
+import {AppointmentService} from '../appointment/api.appointments.service';
 
 @Component({
   selector: 'schedule-appointment',
   templateUrl: './schedule-appointment.component.html'
 })
 
-export class ScheduleAppointmentComponent {
+export class ScheduleAppointmentComponent implements OnInit {
+  loading = false;
+  model = {
+    date: '',
+    password: '',
+    time: '',
+    fName: '',
+    lName: '',
+    email: '',
+    phone: ''
+  };
+  returnUrl: String;
     business: Business;
     service: Service;
 
     constructor(
       private businessService: BusinessService,
       private servicesService: ServicesService,
+      private appointmentService: AppointmentService,
       private router: Router,
       private route: ActivatedRoute,
       private location: Location,
@@ -39,8 +52,9 @@ export class ScheduleAppointmentComponent {
     }
 
 
-    schedule(): void{
-
+    schedule(): void {
+      this.appointmentService.createAppointment(this.business.id, this.service.id, this.model.phone, this.model.fName,
+        this.model.lName, this.model.date + '-' + this.model.time);
     }
 
     cancel(): void{

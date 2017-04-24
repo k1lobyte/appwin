@@ -4,8 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
-import { User }     from './../user';
-import { UserService }   from './../api.user.service';
+import { AppointmentService }   from './../appointment/api.appointments.service';
+import {Appointment} from '../appointment/appointment';
 
 @Component({
   selector: 'view-customers',
@@ -13,10 +13,10 @@ import { UserService }   from './../api.user.service';
 })
 
 export class ViewCustomersComponent implements OnInit {
-  customers: User [];
+  users: Appointment [];
 
   constructor(
-    private UserService: UserService,
+    private appointmentService: AppointmentService,
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
@@ -26,7 +26,7 @@ export class ViewCustomersComponent implements OnInit {
   ngOnInit(): void {
       let currentUser = JSON.parse(localStorage.getItem('currentUser'));
       if (currentUser.accessLevel === 'Admin') {
-        this.UserService.getUsersByAccessLevelAndBusiness(currentUser.company_id, 'Guest').then(customers => this.customers = customers);
+        this.appointmentService.getAllAppointmentsByBusinessID(currentUser.company_id).then(users => this.users = users);
       }
   }
 }

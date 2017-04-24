@@ -15,13 +15,16 @@ import { UserService }   from './../api.user.service';
 export class ViewEmployeesComponent implements OnInit {
   employees: User [];
 
+
+
   constructor(
     private UserService: UserService,
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
     private authService: AuthService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     console.log('Lets see some employees!\n');

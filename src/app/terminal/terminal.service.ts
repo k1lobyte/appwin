@@ -12,4 +12,8 @@ export class TerminalService {
     getQueue(): Promise<QueueEntry[]> {
         return Promise.resolve(QUEUE);
     }
+
+    addEntry(entry: QueueEntry): void {
+        QUEUE.push(entry);
+    }
 }

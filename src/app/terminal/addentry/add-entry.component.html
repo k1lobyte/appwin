@@ -2,24 +2,23 @@
     <div class="panel-body">
         <form>
             <div class="form-group">
-                <label for="nameInput">Name</label>
-                <input id="nameInput" class="form-control" placeholder="name">
+                <label for="fNameInput">Name</label>
+                <input #fName id="nameInput" class="form-control" placeholder="name">
+            </div>
+            <div class="form-group">
+                <label for="lNameInput">Name</label>
+                <input #lName id="nameInput" class="form-control" placeholder="name">
             </div>
             <div class="form-group">
                 <label for="phoneInput">Phone</label>
-                <input id="phoneInput" class="form-control" placeholder="0000000000">
+                <input #phone id="phoneInput" class="form-control" placeholder="0000000000">
             </div>
             <div class="form-group">
                 <label for="emailInput">Email</label>
-                <input id="emailInput" class="form-control" placeholder="Email">
+                <input #email id="emailInput" class="form-control" placeholder="Email">
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="">
-                    services
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <button (click)="addEntry(fName.value, lName.value, phone.value, email.value)" type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>

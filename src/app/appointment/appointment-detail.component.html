@@ -1,20 +1,21 @@
+<script src="../terminal/terminal.component.ts"></script>
 <div *ngIf="appointment && service && business && employee">
    <div class="panel panel-default">
      <div class="panel-heading">
        <h4>
          <span>{{appointment.customerContact.fName}} is getting {{service.name}} </span>
          <span class="label pull-right"
-               [class.label-default]="appointment.status === 'Confirmed'"
-               [class.label-success]="appointment.status === 'Completed'"
-               [class.label-warning]="appointment.status === 'Pending'"
-               [class.label-danger]="appointment.status === 'Canceled'">{{appointment.status}}</span>
+               [class.label-default]="appointment.status == 'Confirmed'"
+               [class.label-success]="appointment.status == 'Completed'"
+               [class.label-warning]="appointment.status == 'Pending'"
+               [class.label-danger]="appointment.status == 'Canceled'">{{appointment.status}}</span>
        </h4>
      </div>
      <div class="panel-body">
        <!-- Appointment Details -->
        <h5>Appointment Details</h5>
-       <div *ngIf="appointment.status !== 'Completed'">Begins at {{appointment.appointmentDate}}</div>
-       <div *ngIf="appointment.status === 'Completed'">Completed at {{appointment.endTime}}</div>
+       <div *ngIf="appointment.status != 'Completed'">Begins at {{appointment.appointmentDate}}</div>
+       <div *ngIf="appointment.status == 'Completed'">Completed at {{appointment.endTime}}</div>
       <div>Service by {{employee.name.fName}}</div>
        <!-- Customer Details -->
        <h5>Customer Information</h5>
@@ -22,9 +23,9 @@
        <div>{{appointment.customerContact.email}}</div>
        <div>{{appointment.customerContact.phone}}</div>
        <div class="pull-right">
-         <button class="btn btn-danger" *ngIf="appointment.status === 'Pending'" (click)="reject(appointment)">Reject</button>
-         <button class="btn btn-default" *ngIf="appointment.status === 'Pending'" (click)="confirm(appointment)">Confirm</button>
-         <button class="btn btn-primary" *ngIf="appointment.status === 'Confirmed'" (click)="complete(appointment)">Mark Complete</button>
+         <button class="btn btn-danger" *ngIf="appointment.status == 'Pending'" (click)="reject(appointment)">Reject</button>
+         <button class="btn btn-default" *ngIf="appointment.status == 'Pending'" (click)="confirm(appointment)">Confirm</button>
+         <button class="btn btn-primary" *ngIf="appointment.status == 'Confirmed'" (click)="complete(appointment)">Mark Complete</button>
        </div>
      </div>
    </div>

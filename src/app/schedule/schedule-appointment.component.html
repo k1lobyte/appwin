@@ -3,7 +3,7 @@
     <h3>{{business.name}}</h3>
     <h4>Schedule Appointment for {{service.name}}</h4>
   </div>
-  <form class="col-sm-4">
+  <form (ngSubmit)="schedule()" class="col-sm-4">
     <div class="form-group">
       <div class="form-group">
         <label for="employee">Employee</label>
@@ -14,7 +14,7 @@
       </div>
       <label for="date">Date</label>
       <div class='input-group date'>
-        <input type='text' class="form-control" id='datepicker'/>
+        <input type='text' class="form-control" id='datepicker' [(ngModel)]="model.date"/>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -23,7 +23,7 @@
     <div class="form-group">
       <label for="time">Time</label>
       <div class="input-group">
-        <input type="text" class="form-control" id="timepicker">
+        <input type="text" class="form-control" id="timepicker"  [(ngModel)]="model.time">
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-time"></span>
         </span>
@@ -31,22 +31,22 @@
     </div>
     <div class="form-group">
       <label for="name">First Name</label>
-      <input type="text" class="form-control" id="firstname">
+      <input type="text" class="form-control" id="firstname" [(ngModel)]="model.fName">
     </div>
     <div class="form-group">
       <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastname">
+      <input type="text" class="form-control" id="lastname" [(ngModel)]="model.lName">
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email">
+      <input type="email" class="form-control" id="email"[(ngModel)]="model.email">
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="tel" class="form-control" id="phone">
+      <input type="tel" class="form-control" id="phone"[(ngModel)]="model.phone">
     </div>
     <!--<button type="submit" class="btn btn-default">Submit</button>-->
     <button class="btn btn-default" (click)="cancel()">Cancel</button>
-    <button class="btn btn-primary" (click)="schedule()">Schedule Appointment</button>
+    <button class="btn btn-primary" type="submit">Schedule Appointment</button>
   </form>
 </div>

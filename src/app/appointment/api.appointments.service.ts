@@ -12,15 +12,29 @@ import {Appointment} from './appointment';
 @Injectable()
 export class AppointmentService {
 
+  private myRequest = new Object({
+    company_Id: '',
+    service_Id: '',
+    customerContact: {
+      phone: '',
+      fName: '',
+      lName: ''
+    },
+    appointmentDate: ''
+  });
+
   private headers = new Headers(
     {
       'Accept': 'application/json',
       'X-Requested-By': 'Angular 2'
+
     }
   );
-  private appointmentURL = 'http://rehket.asuscomm.com:3000/';  // URL to web api
+  private appointmentURL = 'http://localhost:3000/';  // URL to web api
 
   constructor(private http: Http) { }
+
+
 
   getServices(): Promise<Appointment[]> {
     let res = this.http.get(this.appointmentURL)
@@ -31,6 +45,21 @@ export class AppointmentService {
     return res;
   }
 
+  createAppointment(company_Id: String, service_Id: string, phone: string, fName: string,
+                    lName: string, appointmentDate: string): Promise<Appointment> {
+    let body = JSON.stringify({
+      company_Id: company_Id,
+      service_Id: service_Id,
+      customerContact: {
+        fName: fName,
+        lName: lName,
+        phone: phone
+      },
+      appointmentDate: appointmentDate
+    });
+    return this.http.post('localhost:3000/appointment/', body, {}).toPromise().then(response => response.json() as Appointment);
+  }
+
   getAppointment(id: string): Promise<Appointment> {
     return this.getServices().then(services => services.find(service => service.id === id));
   }
@@ -38,31 +67,26 @@ export class AppointmentService {
   getFutureAppointmentsByBusinessId(apptID: string): Promise<Appointment[]> {
     let apptURL = 'http://rehket.asuscomm.com:3000/company/' + apptID + '/appointment/future';
     console.log('Looking at URL: ' + apptURL);
-    let res = this.http.get(apptURL)
+    return this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
+
   }
 
   getPastAppointmentsByBusinessId(busID: string): Promise<Appointment[]> {
     let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/appointment/past';
     console.log('Looking at URL: ' + apptURL);
-    let res = this.http.get(apptURL)
+    return this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
   }
 
   getAllAppointmentsByBusinessID(busID: string): Promise<Appointment[]> {
     let apptURL = 'http://rehket.asuscomm.com:3000/company/' + busID + '/appointment/all';
     console.log('Looking at URL: ' + apptURL);
-    let res = this.http.get(apptURL)
+    return this.http.get(apptURL)
       .toPromise().then(response => response.json() as Appointment[])
       .catch(this.handleError);
-    console.log(res);
-    return res;
   }
 
   private handleError(error: any): Promise<any> {
